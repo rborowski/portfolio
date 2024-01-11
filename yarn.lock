@@ -256,6 +256,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-free@npm:^6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/fontawesome-free@npm:6.5.1"
+  checksum: dc359ede1ddfc6d91915345143008420001c56b164a6fe95d81bcca631eecca41009bfacf794d55bdb9d927c112119ce90a11cb4f576a815ed69ec681e5eb824
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.13":
   version: 0.11.13
   resolution: "@humanwhocodes/config-array@npm:0.11.13"
@@ -1730,13 +1737,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"font-awesome@npm:4.7.0":
-  version: 4.7.0
-  resolution: "font-awesome@npm:4.7.0"
-  checksum: 1c456e2939c55192eed67db9c0efb8db3e92fd357ca189ca00030eb44acffa1e9f835288d2204c14b9a9c490a7b14b7090dfaff80ded6b2473f50a923dfb41e7
-  languageName: node
-  linkType: hard
-
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -2945,6 +2945,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio-first@workspace:."
   dependencies:
+    "@fortawesome/fontawesome-free": "npm:^6.5.1"
     "@mdi/font": "npm:7.4.47"
     "@vitejs/plugin-vue": "npm:^4.6.2"
     core-js: "npm:^3.34.0"
@@ -2955,7 +2956,6 @@ __metadata:
     eslint-plugin-node: "npm:^11.1.0"
     eslint-plugin-promise: "npm:^6.1.1"
     eslint-plugin-vue: "npm:^9.19.0"
-    font-awesome: "npm:4.7.0"
     pinia: "npm:^2.1.7"
     roboto-fontface: "npm:^0.10.0"
     sass: "npm:^1.69.7"

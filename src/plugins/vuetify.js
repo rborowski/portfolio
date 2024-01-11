@@ -5,7 +5,7 @@
  */
 
 // Styles
-import 'font-awesome/css/font-awesome.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 
@@ -17,7 +17,9 @@ import { mdi } from 'vuetify/iconsets/mdi'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
-  //
+  theme: {
+    defaultTheme: "dark",
+  },
   icons: {
     defaultSet: 'fa',
     aliases,
