@@ -12,6 +12,7 @@ import '@/styles/settings.scss'
 
 // Composables
 import { createVuetify } from 'vuetify'
+import { md3 } from 'vuetify/blueprints'
 import { aliases, fa } from 'vuetify/iconsets/fa4'
 import { mdi } from 'vuetify/iconsets/mdi'
 import colors from 'vuetify/lib/util/colors';
@@ -39,12 +40,13 @@ const appTheme = {
     info: "#ff53d0",
     warning: "#ff8e00",
     error: "#ff5252"
-    }
+    } 
   }
 }
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
+  blueprint: md3,
   theme: {
     defaultTheme: "dark",
     themes: {

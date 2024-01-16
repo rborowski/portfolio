@@ -1,50 +1,45 @@
 <template>
-  <v-navigation-drawer fixed v-model="drawer" location="bottom" flat color="background">
-      <!--  -->
+  <v-app-bar flat fixed color="background" :location="display.mdAndUp.value? 'top' :'bottom'">
+    <v-container class="max-w d-flex">
+      <v-app-bar-title class="d-flex align-center">
+        Rafał Borowski
+      </v-app-bar-title>
+      
+        <v-spacer></v-spacer>
+        <v-list bg-color="transparent">
+          <template v-if="display.mdAndUp.value">
+          <v-btn
+            v-for="navItem in appStore.navItems"
+            :class="{'text-primary' : navItem === appStore.currentView}"
+            @click="appStore.scroll(navItem)"
+            variant="text"
+          >
+          {{ getPropperNavName(navItem) }}
+          </v-btn>
+        </template>  
+        <v-btn variant="text" icon="mdi: mdi-theme-light-dark" @click="appStore.toggleTheme"></v-btn>
+        <v-app-bar-nav-icon @click="appStore.drawer = !appStore.drawer" v-if="!display.mdAndUp.value"></v-app-bar-nav-icon>
+        </v-list>
+    </v-container>
+        
 
-    </v-navigation-drawer>
-  <v-app-bar flat style="position:fixed" color="background" class="px-12" absolute>
-    <v-app-bar-title>
-      {{ appStore.appName }}
-    </v-app-bar-title>
-    <v-spacer></v-spacer>
-    <div>
-      <v-btn
-        v-for="navItem in navItems"
-        :class="{'text-primary' : navItem === currentComponent}"
-        @click="scroll(navItem)"
-        variant="text"
-      >
-      {{ getPropperNavName(navItem) }}
-      </v-btn>
-      <v-btn variant="text" icon="mdi: mdi-theme-light-dark" @click="toggleTheme"></v-btn>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-    </div>
   </v-app-bar>
 </template>
 
 <script setup>
 import { useAppStore } from "@/store/app";
-import { ref } from "vue";
-import { useTheme } from 'vuetify'
+import { useDisplay } from "vuetify";
 
-const theme = useTheme()
-
+const display = useDisplay()
 const appStore = useAppStore()
-const drawer = ref(false)
-const currentComponent = ref("home")
-const navItems = ["home", "about-me", "portfolio", "testimonials", "contact"]
 
 function getPropperNavName(navName) {
   return (navName.charAt(0).toUpperCase() + navName.slice(1)).replace("-", " ")
 }
-
-function scroll(refName) {
-  const elem = document.getElementById(refName);
-  elem.scrollIntoView({behavior: "smooth"})
-}
-
-function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-}
 </script>
+<style scoped lang="sass">
+.max-w
+  max-width: 1200px
+.v-spacer
+  flex-grow: 0
+</style>
