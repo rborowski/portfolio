@@ -15,13 +15,14 @@ import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
 import { aliases, fa } from 'vuetify/iconsets/fa4'
 import { mdi } from 'vuetify/iconsets/mdi'
-import colors from 'vuetify/lib/util/colors';
+import { siSimpleicons } from 'simple-icons';
+import colors from 'vuetify/util/colors';
 
 // custom colors for dark and light mode
-const appTheme = {
+const appThemes = {
   dark: {
     colors: {
-      primary: "0B6B5A",
+      primary: colors.teal.darken1,
       accent: "#FF4081",
       secondary: "#21dc79",
       success: "#86af3f",
@@ -33,7 +34,7 @@ const appTheme = {
   },
   light: {
     colors: {
-    primary: "0B6B5A",
+    primary: colors.teal.darken3,
     accent: "#ff6b99",
     secondary: "#26ff8c",
     success: "#a5d64c",
@@ -49,10 +50,7 @@ export default createVuetify({
   blueprint: md3,
   theme: {
     defaultTheme: "dark",
-    themes: {
-      light: appTheme.light,
-      dark: appTheme.dark
-    }
+    themes: appThemes
   },
   icons: {
     defaultSet: 'fa',

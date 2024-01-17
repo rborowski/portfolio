@@ -12,7 +12,9 @@
     "core-js": "^3.34.0",
     "eslint": "^8.56.0",
     "roboto-fontface": "^0.10.0",
+    "simple-icons": "^11.1.0",
     "vue": "^3.4.7",
+    "vue3-simple-icons": "^11.0.0",
     "vuetify": "^3.4.10"
   },
   "devDependencies": {

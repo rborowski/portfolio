@@ -5,9 +5,9 @@
         Rafał Borowski
       </v-app-bar-title>
       
-        <v-spacer></v-spacer>
-        <v-list bg-color="transparent">
-          <template v-if="display.mdAndUp.value">
+      <v-spacer></v-spacer>
+      <v-list bg-color="transparent">
+        <template v-if="display.mdAndUp.value">
           <v-btn
             v-for="navItem in appStore.navItems"
             :class="{'text-primary' : navItem === appStore.currentView}"
@@ -19,10 +19,8 @@
         </template>  
         <v-btn variant="text" icon="mdi: mdi-theme-light-dark" @click="appStore.toggleTheme"></v-btn>
         <v-app-bar-nav-icon @click="appStore.drawer = !appStore.drawer" v-if="!display.mdAndUp.value"></v-app-bar-nav-icon>
-        </v-list>
+      </v-list>
     </v-container>
-        
-
   </v-app-bar>
 </template>
 
