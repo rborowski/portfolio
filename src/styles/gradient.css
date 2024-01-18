@@ -1,0 +1,19 @@
+:root {
+  --gradient-primary: linear-gradient(
+      to top left, rgb(var(--v-theme-gradient-top)), rgb(var(--v-theme-gradient-bottom))
+    );
+}
+
+/* Apply gradient as text color */
+.gradient-text-primary {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Apply gradient as background color */
+.v-btn.bg-primary,
+.bg-gradient {
+  background: var(--gradient-primary) !important;
+}

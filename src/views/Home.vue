@@ -1,23 +1,23 @@
 <template >
   <v-container
-    class="d-flex mt-16 mt-md-n16 px-0 px-md-5 justify-md-space-around justify-center d-flex flex-column align-center container-max-w container-min-h"
-    id="home">
+    id="home"
+    class="mt-16 mt-md-n16 px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h"
+  >
       <div v-if="display.mdAndUp.value" />
-      <div class="w-100 ">
+      <div class="w-100">
         <div class="d-flex justify-space-between gr-5 gc-sm-5 gc-lg-10 flex-wrap">
           <HomeSocial class="pl-3 pl-md-0" />
           <HomeAvatar class="order-md-last" />
           <div v-if="!display.mdAndUp.value" class="pr-15" />
           <HomeCard class="mx-n3 mx-md-0" />
         </div>
-        <div class="mt-7 mt-md-12 ml-md-16 px-8">
+        <div class=" mt-7 mt-md-12 mx-md-16 px-5 px-md-10">
           <HomeTechStack />
         </div>
       </div>
-      <div class="w-100 ml-md-16 px-13" v-if="display.mdAndUp.value">
+      <div class=" mx-md-16 px-10" v-if="display.mdAndUp.value">
         <HomeScrollDown />
       </div>
-
   </v-container>
 </template>
 

@@ -5,58 +5,64 @@
  */
 
 // Styles
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@mdi/font/css/materialdesignicons.css'
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@mdi/font/css/materialdesignicons.css";
 //import 'vuetify/styles'
-import '@/styles/settings.scss'
+import "@/styles/settings.scss";
 
 // Composables
-import { createVuetify } from 'vuetify'
-import { md3 } from 'vuetify/blueprints'
-import { aliases, fa } from 'vuetify/iconsets/fa4'
-import { mdi } from 'vuetify/iconsets/mdi'
-import { siSimpleicons } from 'simple-icons';
-import colors from 'vuetify/util/colors';
+import { createVuetify } from "vuetify";
+import { md3 } from "vuetify/blueprints";
+import { aliases, fa } from "vuetify/iconsets/fa4";
+import { mdi } from "vuetify/iconsets/mdi";
+import colors from "vuetify/util/colors";
 
 // custom colors for dark and light mode
 const appThemes = {
   dark: {
     colors: {
-      primary: colors.teal.darken1,
+      primary: "#11AC90",
+      "primary-darken": colors.teal.darken1,
+      "gradient-top": "#0799C7",
+      "gradient-bottom": "#09FFD3",
+      background: "#002423",
       accent: "#FF4081",
       secondary: "#21dc79",
       success: "#86af3f",
       info: "#f34fc6",
       warning: "#FB8C00",
       error: "#FF5252",
-      background: "#002423"
-    }
+    },
   },
   light: {
     colors: {
-    primary: colors.teal.darken3,
-    accent: "#ff6b99",
-    secondary: "#26ff8c",
-    success: "#a5d64c",
-    info: "#ff53d0",
-    warning: "#ff8e00",
-    error: "#ff5252"
-    } 
-  }
-}
+      primary: colors.teal.darken1,
+      "primary-darken": "#089492",
+      "gradient-top": "#10977F",
+      "gradient-bottom": "#0D5B74",
+      accent: "#ff6b99",
+      secondary: "#26ff8c",
+      success: "#a5d64c",
+      info: "#ff53d0",
+      warning: "#ff8e00",
+      error: "#ff5252",
+    },
+  },
+};
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   blueprint: md3,
   theme: {
     defaultTheme: "dark",
-    themes: appThemes
+    themes: appThemes,
   },
   icons: {
-    defaultSet: 'fa',
+    defaultSet: "fa",
     aliases,
     sets: {
-      fa, mdi
+      fa,
+      mdi,
     },
   },
-})
+});

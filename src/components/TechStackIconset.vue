@@ -1,11 +1,29 @@
 <template>
   <div>
-    <v-icon v-for="(icon, index) in icons" :key="index"  class="logo-icon"> <component :is="icon.component" :style="'fill:' + icon.color" size="50"/> </v-icon>
+    <v-icon
+      v-for="(icon, index) in icons"
+      :key="index"
+      class="mr-2 my-2"
+      :style="'fill:' + icon.color + '; width:' + size * 0.4 + 'px'"
+    >
+      <component :is="icon.component" :size="size"/> 
+    </v-icon>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
+
+const props = defineProps({
+  size: {
+    type: Number,
+    default: 50
+  },
+  iconList: {
+    type: Array,
+    required: true,
+  }
+})
 
 import { 
   JavaScriptIcon,
@@ -96,8 +114,8 @@ const icons = [
 
 <style scoped>
 .logo-icon {
-  width: 30px; 
   height: auto;
   margin-right: 10px; /* Adjust spacing between logos */
+  margin-bottom: 10px
 }
 </style>

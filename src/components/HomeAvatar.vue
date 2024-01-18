@@ -1,5 +1,5 @@
 <template>
-  <v-avatar :size="getSize" class="bg-gradient align-self-center">
+  <v-avatar :size="getSize" class="bg-gradient align-self-center elevation-4" >
     <v-img src="@/assets/img/selfie.png" position="60%"/>
   </v-avatar>
 </template>
@@ -14,10 +14,4 @@ const getSize = computed(() => {
   if (display.lgAndUp.value) return "300" 
   return '180'
 })
-
 </script>
-
-<style scoped lang="sass">
-.bg-gradient
-  background: linear-gradient(to top left, #0799C7, #09FFD3)
-</style>

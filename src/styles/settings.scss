@@ -9,8 +9,10 @@
 //   $color-pack: false
 // );
 
-@use 'vuetify' with (
+@forward 'vuetify' with (
   $body-font-family: 'Ruda',
   );
 
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@400&display=swap');
+
+

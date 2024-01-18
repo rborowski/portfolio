@@ -1,5 +1,5 @@
 <template>
-  <v-card :class="{'w-100': !display.mdAndUp.value }" class="flex-1-0 px-8 py-3 py-sm-10 bg-gradient">
+  <v-card :class="{'w-100': !display.mdAndUp.value }" class="flex-1-0 bg-gradient px-8 py-3 py-sm-10 bg-gradient">
     <div class="text-subtitle-1 text-sm-h6  font-weight-light mb-1 text-background">
       Hi, I'm Rafał
     </div>
@@ -35,8 +35,3 @@ import { useDisplay } from "vuetify";
 const appStore = useAppStore()
 const display = useDisplay()
 </script>
-
-<style scoped lang="sass">
-.bg-gradient
-  background: linear-gradient(to top left, #0799C7, #09FFD3)
-</style>
