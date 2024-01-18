@@ -1,19 +1,23 @@
 <template >
-  <v-container class="mt-16 mt-md-n16 d-flex px-0 px-md-10 container-max-w align-center flex-column justify-space-around  container-min-h" id="home">
-    <div v-if="display.mdAndUp.value"></div>
-    <div class="w-100">
-      <v-row class="d-flex justify-center gr-5 gc-sm-10">
-        <HomeSocial/>
-        <HomeAvatar class="order-md-last"/>
-        <HomeCard/>
-      </v-row>
-      <v-row class=" mt-7 mt-md-12 pl-8">
-        <HomeTechStack/>
-      </v-row>
-    </div>
-    <div class="w-100" v-if="display.mdAndUp.value">
-      <HomeScrollDown/>
-    </div>
+  <v-container
+    class="d-flex mt-16 mt-md-n16 px-0 px-md-5 justify-md-space-around justify-center d-flex flex-column align-center container-max-w container-min-h"
+    id="home">
+      <div v-if="display.mdAndUp.value" />
+      <div class="w-100 ">
+        <div class="d-flex justify-space-between gr-5 gc-sm-5 gc-lg-10 flex-wrap">
+          <HomeSocial class="pl-3 pl-md-0" />
+          <HomeAvatar class="order-md-last" />
+          <div v-if="!display.mdAndUp.value" class="pr-15" />
+          <HomeCard class="mx-n3 mx-md-0" />
+        </div>
+        <div class="mt-7 mt-md-12 ml-md-16 px-8">
+          <HomeTechStack />
+        </div>
+      </div>
+      <div class="w-100 ml-md-16 px-13" v-if="display.mdAndUp.value">
+        <HomeScrollDown />
+      </div>
+
   </v-container>
 </template>
 

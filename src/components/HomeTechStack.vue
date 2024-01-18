@@ -5,7 +5,7 @@
       <TechStackIconset />
       <v-btn
         @click="appStore.scroll('about-me')"
-        class="text-subtitle-1 text-primary ml-4"
+        class="text-subtitle-1 text-primary"
         variant="text"
       >
         Show more

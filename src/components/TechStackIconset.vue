@@ -64,31 +64,31 @@ const icons = [
     component: MongoDbIcon,
     color: "Green"
   },
-  {
-    name: "firebase",
-    component: FirebaseIcon,
-    color: "Orange"
-  },
-  {
-    name: "mysql",
-    component: MySqlIcon,
-    color: "DodgerBlue"
-  },
-  {
-    name: "sass",
-    component: SassIcon,
-    color: "MediumOrchid"
-  },
-  {
-    name: "tailwind",
-    component: TailwindCssIcon,
-    color: "DodgerBlue"
-  },
-  {
-    name: "git",
-    component: GitIcon,
-    color: "FireBrick"
-  },
+  // {
+  //   name: "firebase",
+  //   component: FirebaseIcon,
+  //   color: "Orange"
+  // },
+  // {
+  //   name: "mysql",
+  //   component: MySqlIcon,
+  //   color: "DodgerBlue"
+  // },
+  // {
+  //   name: "sass",
+  //   component: SassIcon,
+  //   color: "MediumOrchid"
+  // },
+  // {
+  //   name: "tailwind",
+  //   component: TailwindCssIcon,
+  //   color: "DodgerBlue"
+  // },
+  // {
+  //   name: "git",
+  //   component: GitIcon,
+  //   color: "FireBrick"
+  // },
 ]
 
 
