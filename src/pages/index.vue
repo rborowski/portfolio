@@ -1,7 +1,7 @@
 <template>
   <Home />
   <AboutMe />
-  <Portfolio max-projects-couint="4"/>
+  <Portfolio :max-projects-count="4"/>
   <Testimonials />
   <Contact />
 </template>

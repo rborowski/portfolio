@@ -1,14 +1,14 @@
 <template>
-  <v-row class="d-flex align-center mt-10">
+  <v-row class="d-flex align-center mt-6">
     <v-col cols="auto">
       <v-btn
       color="primary"
       href="/BOROWSKI_CV_EN.pdf"
       :size="display.smAndUp.value ? 'x-large' : 'large'"
       target="_blank"
-      class="text-background"
+      class="text-background text-subtitle-1 text-sm-h6 px-3 px-sm-4 font-weight-medium"
       >
-        DOWNLOAD CV
+        Download CV
         <v-icon icon="mdi:mdi-download" end />
       </v-btn>
     </v-col>
@@ -16,6 +16,7 @@
       <v-btn
       @click="appStore.scroll('contact')"
       variant="text"
+      class="text-background text-subtitle-2 px-3 px-sm-4 font-weight-medium"
       >
         Contact me
         <v-icon icon="mdi:mdi-send-variant-outline" end/>

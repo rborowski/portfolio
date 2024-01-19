@@ -1,5 +1,5 @@
 <template>
-<div class="section-header">
+  <div class="section-header">
     My Tech Stack
   </div>
   <div class="text-subtitle-1 mb-1">
@@ -18,6 +18,7 @@
     Tools
   </div>
   <TechStackIconset :icon-list="iconLists.tools" :size="iconSize" />
+  <div class="mb-15"></div>
 </template>
 
 <script setup>

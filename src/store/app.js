@@ -18,7 +18,7 @@ export const useAppStore = defineStore("app", () => {
 
   function scroll(refName) {
     const elem = document.getElementById(refName);
-    elem.scrollIntoView({behavior: "smooth"})
+    elem.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
   }
   
   function toggleTheme() {
