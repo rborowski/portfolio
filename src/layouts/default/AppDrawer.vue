@@ -12,7 +12,7 @@
       <v-list-item
       v-for="navItem in appStore.navItems"
       :class="{'text-primary' : navItem === appStore.currentView}"
-      @click="appStore.scroll(navItem)"
+      @click="handleMenuClick(navItem)"
       variant="text"
       >
         {{ getPropperNavName(navItem) }}
@@ -28,5 +28,10 @@ const appStore = useAppStore()
 
 function getPropperNavName(navName) {
   return (navName.charAt(0).toUpperCase() + navName.slice(1)).replace("-", " ")
+}
+
+function handleMenuClick(navItem){
+  appStore.scroll(navItem)
+  appStore.drawer = false
 }
 </script>
