@@ -1,13 +1,16 @@
 <template>
-  <v-container class="h-screen" id="testimonials">
-    <v-responsive class="align-center text-center h-screen">
-      <v-img height="300" src="@/assets/logo.svg" />
+  <v-container
+    id="testimonials"
+    class="px-0 px-md-5 d-flex justify-space-around text-center flex-column container-max-w container-min-h"
+  >
+    <div>
+      <v-responsive><v-img max-height="300" src="@/assets/logo.svg" /></v-responsive>  
+      <div>
+        <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
+        <h1 class="text-h2 font-weight-bold">Vuetify</h1>
+      </div>
 
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
-
-      <h1 class="text-h2 font-weight-bold">Vuetify</h1>
-
-      <div class="py-14" />
+      <div class="py-14"></div>
 
       <v-row class="d-flex align-center justify-center">
         <v-col cols="auto">
@@ -23,7 +26,6 @@
               size="large"
               start
             />
-
             Components
           </v-btn>
         </v-col>
@@ -43,7 +45,6 @@
               size="large"
               start
             />
-
             Get Started
           </v-btn>
         </v-col>
@@ -61,12 +62,11 @@
               size="large"
               start
             />
-
             Community
           </v-btn>
         </v-col>
       </v-row>
-    </v-responsive>
+    </div>
   </v-container>
 </template>
 

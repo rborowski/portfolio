@@ -26,14 +26,3 @@ import { useDisplay } from "vuetify";
 
 const display = useDisplay()
 </script>
-
-<style scoped lang="sass">
-.container-min-h
-  height: max-content
-  min-height: 100dvh
-  max-height: none
-  overflow: hidden
-
-.container-max-w
-  max-width: 1200px
-</style>

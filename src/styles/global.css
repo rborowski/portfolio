@@ -1,0 +1,13 @@
+@import url(/src/styles/gradient.css);
+
+/* Define View container dimensions */
+.container-min-h {
+  height: max-content;
+  min-height: 100dvh;
+  max-height: none;
+  overflow: hidden;
+}
+
+.container-max-w {
+  max-width: 1200px !important;
+}
