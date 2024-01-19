@@ -26,7 +26,7 @@
         </v-col>
         <v-col cols="12" md="6" class="px-0 px-md-8 " :class="{'order-md-first': index % 2 === 0}">
           <v-card
-            :image="'/src/assets/img/portfolio/' + project.photo"
+            :image="'portfolio/' + project.photo"
             class="mx-auto w-100"
             :height="250"
             cover
