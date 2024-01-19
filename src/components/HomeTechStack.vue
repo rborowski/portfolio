@@ -17,29 +17,29 @@
 
 <script setup>
 import { useAppStore } from "@/store/app";
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";
 
 const display = useDisplay()
 const appStore = useAppStore()
 
-const iconList = [
+const iconList = ref([
   "javascript",
   "python",
   "php",
   "vue",
   "vuetifyjs",
-  "vitejs",
   "nodejs-icon",
   "mongodb-icon",
-  "firebase"
-]
+  "firebase",
+  "mysql-icon",
+])
 
 const iconSize = computed(() => {
   if (display.sm.value) return 30
   if (display.md.value) return 35
   if (display.lgAndUp.value) return 40
-  return 21
+  return 22
 })
 
 </script>
