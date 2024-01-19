@@ -5,7 +5,7 @@
       <TechStackIconset :icon-list="iconList" :size="iconSize" />
       <v-btn
         @click="appStore.scroll('about-me')"
-        class="text-subtitle-2 text-primary my-2 ml-n1"
+        class="text-subtitle-2 text-primary my-2 ml-n1 ml-sm-2"
         variant="outlined"
       >
         Show more
@@ -24,21 +24,22 @@ const display = useDisplay()
 const appStore = useAppStore()
 
 const iconList = [
-  "js",
+  "javascript",
   "python",
   "php",
   "vue",
-  "vuetify",
-  "vite",
-  "node",
-  "mongo"
+  "vuetifyjs",
+  "vitejs",
+  "nodejs-icon",
+  "mongodb-icon",
+  "firebase"
 ]
 
 const iconSize = computed(() => {
-  if (display.sm.value) return 70
-  if (display.md.value) return 90
-  if (display.lgAndUp.value) return 120
-  return 25
+  if (display.sm.value) return 30
+  if (display.md.value) return 35
+  if (display.lgAndUp.value) return 40
+  return 21
 })
 
 </script>
