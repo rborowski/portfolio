@@ -20,7 +20,7 @@
         v-model="carouselModel"
         height="400"
         hide-delimiter-background
-        :show-arrows="getCarouselLength > 1 ? 'hover' : false"
+        :show-arrows="false"
         :hide-delimiters="!(getCarouselLength > 1)"
       >
         <v-carousel-item
