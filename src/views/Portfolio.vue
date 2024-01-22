@@ -1,7 +1,7 @@
 <template>
   <v-container
     id="portfolio-a"
-    class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h"
+    class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
     style="position:relative"
   >
   <div id="portfolio" style="position: absolute; top: -48px; left: 0"></div> 
