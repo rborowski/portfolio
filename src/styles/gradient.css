@@ -13,7 +13,7 @@
 }
 
 /* Apply gradient as background color */
-.v-btn.bg-gradient-top,
+.v-btn.bg-primary,
 .bg-gradient {
   background: var(--gradient-primary) !important;
 }

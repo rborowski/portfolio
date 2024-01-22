@@ -34,7 +34,7 @@
         </v-col>
       </v-row>
     </div>
-    <div class="d-flex align-center w-100 mt-5 mx-6 mx-md-16" v-if="maxProjectsCount">
+    <div class="d-flex align-center w-100 mt-5 mx-6 mx-md-16" v-if="maxProjectsCount && portfoiloStore.projects.length > 4">
       <v-btn
       @click="$router.push('/portfolio')"
       variant="outlined"
