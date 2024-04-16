@@ -2,9 +2,9 @@
   "name": "portfolio-first",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "vite --config vite.config.work.mjs",
+    "build": "vite build --config vite.config.work.mjs",
+    "preview": "vite preview --config vite.config.work.mjs",
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
