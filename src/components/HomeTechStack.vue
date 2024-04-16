@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useAppStore } from "@/store/app";
+import { useAppStore } from "@app/store/app";
 import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";
 

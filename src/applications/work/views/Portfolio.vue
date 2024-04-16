@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-import { usePortfolioStore } from "../store/portfolio";
+import { usePortfolioStore } from "@app/store/portfolio";
 
 const portfoiloStore = usePortfolioStore()
 
