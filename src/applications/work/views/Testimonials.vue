@@ -44,7 +44,7 @@
 
 <script setup>
 import { useDisplay } from "vuetify";
-import { useTestimonialsStore } from "@/store/testimonials";
+import { useTestimonialsStore } from "@app/store/testimonials";
 import { ref, computed } from "vue";
 
 const display = useDisplay()

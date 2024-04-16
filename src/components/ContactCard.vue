@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { useAppStore } from "@/store/app";
+import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
 
 const appStore = useAppStore()

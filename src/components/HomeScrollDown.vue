@@ -7,6 +7,6 @@
 </template>
 
 <script setup>
-import { useAppStore } from "@/store/app";
+import { useAppStore } from "@app/store/app";
 const appStore = useAppStore()
 </script>
