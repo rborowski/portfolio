@@ -1,11 +1,11 @@
 # This workflow will do an installation of node dependencies, cache/restore them, build the source code and deploy
 
-name: 🚀 Production deployment
+name: 🚀 Staging deployment
 
 on:
   push:
     branches: 
-    - main
+    - staging
 
 jobs:
   web-deploy:
@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: 20
         cache: yarn
-    
+
     - name: 🔨 Build Project
       run: |
         yarn install
@@ -41,7 +41,6 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         local-dir: ./dist/
-        server-dir: /
+        server-dir: staging/
         protocol: ftps
-
 
