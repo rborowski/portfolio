@@ -3,6 +3,10 @@
     id="testimonials"
     class="px-5 d-flex justify-center flex-column container-max-w container-min-h mt-15 mt-md-0"
   >
+  <v-lazy
+    :options="{'threshold':0.5}"
+    transition="fade-transition"
+  >
     <div class="mx-md-10">
       <div>
         <header class="section-header">
@@ -38,7 +42,8 @@
         </v-carousel-item>
       </v-carousel>
 
-    </div>
+      </div>
+    </v-lazy>
   </v-container>
 </template>
 

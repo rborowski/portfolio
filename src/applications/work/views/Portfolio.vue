@@ -1,10 +1,13 @@
 <template>
+  <div id="portfolio" ></div>
   <v-container
-    id="portfolio-a"
-    class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
-    style="position:relative"
+  class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
+  style="position:relative"
   >
-  <div id="portfolio" style="position: absolute; top: -48px; left: 0"></div> 
+  <v-lazy
+    :options="{'threshold':0.5}"
+    transition="fade-transition"
+  >
     <div class="mx-md-10">
       <div class="px-5">
         <header class="section-header">
@@ -44,6 +47,7 @@
         <v-icon icon="mdi:mdi-arrow-right" end/>
       </v-btn>
     </div>
+  </v-lazy>
   </v-container>
 </template>
 
