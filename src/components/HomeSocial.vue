@@ -16,11 +16,11 @@
 const socials = [
   {
     link: "http://github.com/rborowski",
-    icon: "fab fa-github",
+    icon: "mdi: mdi-github",
   },
   {
     link: "http://linkedin.com/in/r-borowski",
-    icon: "fab fa-linkedin-in",
+    icon: "mdi: mdi-linkedin",
   },
 ]
 

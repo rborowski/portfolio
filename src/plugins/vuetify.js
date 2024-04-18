@@ -5,16 +5,15 @@
  */
 
 // Styles
-import "@fortawesome/fontawesome-free/css/all.css";
-import "@mdi/font/css/materialdesignicons.css";
+// import "@fortawesome/fontawesome-free/css/all.css";
+ import "@mdi/font/css/materialdesignicons.css";
 //import 'vuetify/styles'
 import "@/styles/settings.scss";
 
 // Composables
 import { createVuetify } from "vuetify";
 import { md3 } from "vuetify/blueprints";
-import { aliases, fa } from "vuetify/iconsets/fa4";
-import { mdi } from "vuetify/iconsets/mdi";
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import colors from "vuetify/util/colors";
 
 // custom colors for dark and light mode
@@ -58,10 +57,9 @@ export default createVuetify({
     themes: appThemes,
   },
   icons: {
-    defaultSet: "fa",
+    defaultSet: "mdi",
     aliases,
     sets: {
-      fa,
       mdi,
     },
   },
