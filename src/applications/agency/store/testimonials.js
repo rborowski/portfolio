@@ -1,7 +1,7 @@
 // portfolio projects store
 
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 export const useTestimonialsStore = defineStore("testimonials", () => {
   const testimonials = ref([
