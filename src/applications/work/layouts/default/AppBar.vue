@@ -1,8 +1,10 @@
 <template>
   <v-app-bar flat fixed color="background" :location="display.mdAndUp.value? 'top' :'bottom'">
     <v-container class="max-w d-flex">
-      <v-app-bar-title class="d-flex align-center">
-        Rafał Borowski
+      <v-app-bar-title class="d-flex align-center"> 
+        <router-link to="/">
+          Rafał Borowski
+        </router-link>
       </v-app-bar-title>
       
       <v-spacer></v-spacer>
@@ -27,7 +29,9 @@
 <script setup>
 import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
+import { useRouter } from "vue-router";
 
+const router = useRouter()
 const display = useDisplay()
 const appStore = useAppStore()
 
