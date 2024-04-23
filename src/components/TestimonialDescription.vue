@@ -14,7 +14,7 @@
   >
     <v-list-item class="pl-11">
     <template #prepend>
-      <v-avatar class="elevation-4" :image="'testimonials/' + testimonial.photo" size="x-large"></v-avatar>
+      <v-avatar class="elevation-4" :image="'/images/testimonials/' + testimonial.photo" size="x-large"></v-avatar>
     </template>
     <v-list-item-title class="font-weight-black text-uppercase"> 
       {{ testimonial.author }}
