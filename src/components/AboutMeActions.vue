@@ -14,7 +14,8 @@
     </v-col>
     <v-col cols="auto">
       <v-btn
-      @click="appStore.scroll('contact')"
+      :to="{ path: '/', hash: '#contact' }"
+      :active="false"
       variant="text"
       class="text-background text-subtitle-2 px-3 px-sm-4 font-weight-medium"
       >
@@ -25,9 +26,7 @@
 </v-row>
 </template>
 <script setup>
-import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
 
 const display = useDisplay()
-const appStore = useAppStore()
 </script>

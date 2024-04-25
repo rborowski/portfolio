@@ -4,7 +4,8 @@
     <div class="mt-1 d-flex align-center flex-wrap">
       <TechStackIconset :icon-list="iconList" :size="iconSize" />
       <v-btn
-        @click="appStore.scroll('about-me')"
+        :to="{ path: '/', hash: '#about-me' }"
+        :active="false"
         class="text-subtitle-2 text-primary my-2 ml-n1 ml-sm-2"
         variant="outlined"
       >
@@ -16,12 +17,10 @@
 </template>
 
 <script setup>
-import { useAppStore } from "@app/store/app";
 import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";
 
 const display = useDisplay()
-const appStore = useAppStore()
 
 const iconList = ref([
   "javascript",

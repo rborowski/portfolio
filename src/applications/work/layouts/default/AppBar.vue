@@ -2,9 +2,13 @@
   <v-app-bar flat fixed color="background" :location="display.mdAndUp.value? 'top' :'bottom'">
     <v-container class="max-w d-flex">
       <v-app-bar-title class="d-flex align-center"> 
-        <router-link to="/#home" >
+        <v-btn
+          :to="{ path: '/', hash: '' }"
+          :active="false"
+          class="text-none text-h6"
+        >
           Rafał Borowski
-        </router-link>
+        </v-btn>
       </v-app-bar-title>
       
       <v-spacer></v-spacer>

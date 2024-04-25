@@ -12,13 +12,22 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   extendRoutes: (routes) => setupLayouts(routes),
   scrollBehavior(to, from, savedPosition) {
+    const scrollSettings = { 
+      behavior: 'smooth',
+      block: "start", 
+      inline: "nearest"
+    }
+
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth',
-        block: "start", 
-        inline: "nearest"
-      }
+        ...scrollSettings
+      } 
+    } else {
+      return {
+         top: 0,
+         ...scrollSettings
+         }
     }
   }
 })

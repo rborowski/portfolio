@@ -14,7 +14,8 @@
         :size="display.smAndUp.value ? 'x-large' : 'medium'"
         variant="outlined"
         class="text-body-2 text-sm-h6 pa-2 px-sm-4 font-weight-medium"
-        @click="appStore.scroll('contact')"
+        :to="{ path: '/', hash: '#contact' }"
+        :active="false"
       >
         Make it happen
         <template #append>
@@ -29,9 +30,7 @@
 </template>
 
 <script setup>
-import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
 
-const appStore = useAppStore()
 const display = useDisplay()
 </script>
