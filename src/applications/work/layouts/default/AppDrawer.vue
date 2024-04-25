@@ -10,10 +10,13 @@
   >
     <v-list>
       <v-list-item
-      v-for="navItem in appStore.navItems"
-      :class="{'text-primary' : navItem === appStore.currentView}"
-      @click="handleMenuClick(navItem)"
-      variant="text"
+        variant="text"
+        :active="false"
+        v-for="navItem in appStore.navItems"
+        :key="navItem.id"
+        :class="{'text-primary' : navItem === appStore.currentView}"
+        :to="{ path: '/', hash: `#${navItem}` }"
+        @click="appStore.drawer = false"
       >
         {{ getPropperNavName(navItem) }}
       </v-list-item>
@@ -30,8 +33,4 @@ function getPropperNavName(navName) {
   return (navName.charAt(0).toUpperCase() + navName.slice(1)).replace("-", " ")
 }
 
-function handleMenuClick(navItem){
-  appStore.scroll(navItem)
-  appStore.drawer = false
-}
 </script>

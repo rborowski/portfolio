@@ -1,8 +1,8 @@
 <template>
-  <Home />
-  <AboutMe />
-  <Portfolio :max-projects-count="4"/>
-  <Contact />
+  <Home id="home"/>
+  <AboutMe id="about-me" />
+  <Portfolio :max-projects-count="4" id="portfolio"/>
+  <Contact id="contact" />
 </template>
 
 <script setup>

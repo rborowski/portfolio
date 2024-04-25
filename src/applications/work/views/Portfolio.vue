@@ -1,5 +1,4 @@
 <template>
-  <div id="portfolio" ></div>
   <v-container
   class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
   style="position:relative"

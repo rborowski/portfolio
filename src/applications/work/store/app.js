@@ -13,13 +13,8 @@ export const useAppStore = defineStore("app", () => {
 
   //Views and navigation
   const drawer = ref(false)
-  const navItems = ref(["home", "about-me", "portfolio", "testimonials", "contact"])
+  const navItems = ref(["home", "about-me", "portfolio", "contact"])
   const currentView = ref("home")
-
-  function scroll(refName) {
-    const elem = document.getElementById(refName);
-    elem.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
-  }
   
   function toggleTheme() {
     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'

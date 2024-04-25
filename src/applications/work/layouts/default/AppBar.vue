@@ -2,7 +2,7 @@
   <v-app-bar flat fixed color="background" :location="display.mdAndUp.value? 'top' :'bottom'">
     <v-container class="max-w d-flex">
       <v-app-bar-title class="d-flex align-center"> 
-        <router-link to="/">
+        <router-link to="/#home" >
           Rafał Borowski
         </router-link>
       </v-app-bar-title>
@@ -11,12 +11,14 @@
       <v-list bg-color="transparent">
         <template v-if="display.mdAndUp.value">
           <v-btn
-            v-for="navItem in appStore.navItems"
-            :class="{'text-primary' : navItem === appStore.currentView}"
-            @click="appStore.scroll(navItem)"
             variant="text"
+            :active="false"
+            v-for="navItem in appStore.navItems"
+            :key="navItem.id"
+            :class="{'text-primary' : navItem === appStore.currentView}"
+            :to="{ path: '/', hash: `#${navItem}` }"
           >
-          {{ getPropperNavName(navItem) }}
+             {{ getPropperNavName(navItem) }}
           </v-btn>
         </template>  
         <v-btn variant="text" icon="mdi: mdi-theme-light-dark" @click="appStore.toggleTheme"></v-btn>
@@ -29,9 +31,7 @@
 <script setup>
 import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
-import { useRouter } from "vue-router";
 
-const router = useRouter()
 const display = useDisplay()
 const appStore = useAppStore()
 

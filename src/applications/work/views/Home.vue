@@ -1,6 +1,5 @@
 <template >
   <v-container
-    id="home"
     class="mt-16 mt-md-n16 px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h"
   >
       <div v-if="display.mdAndUp.value" />

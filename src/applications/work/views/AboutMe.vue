@@ -1,6 +1,5 @@
 <template>
   <v-container
-    id="about-me"
     class="px-5 d-flex justify-space-around flex-column container-max-w container-min-h"
   >
     <v-lazy
