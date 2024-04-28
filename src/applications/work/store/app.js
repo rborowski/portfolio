@@ -14,18 +14,38 @@ export const useAppStore = defineStore("app", () => {
   //Views and navigation
   const drawer = ref(false)
   const navItems = ref(["home", "about-me", "portfolio", "contact"])
-  const currentView = ref("home")
+  const currentView = ref("")
   
   function toggleTheme() {
     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
   }
 
+  const intersectionHandler = ref({
+    handler: onIntersect,
+    options: {
+      threshold: [0, 0.5, 1.0]
+    }
+  })
+
+  const intersecting = ref(false)
+
+  function onIntersect(isIntersecting, entries, observer) {
+    const intersecting_element = ref(entries[0])
+    intersecting.value = intersecting_element.value.intersectionRatio >= 0.5
+    if(intersecting.value){
+      let id = intersecting_element.value.target.id
+      currentView.value = id
+      // location.hash = id
+    }
+  }
+
+
   return {
+    intersectionHandler,
     appName,
     drawer,
     navItems,
     currentView,
-    scroll,
     toggleTheme,
   };
 });
