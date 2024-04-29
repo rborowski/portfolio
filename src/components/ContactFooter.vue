@@ -25,9 +25,9 @@
     target="_blank"
     />
     <v-list-item
-    title="rborowski.gdy@gmail.com"
+    title="work@rborowski.pl"
     prepend-icon="mdi: mdi-email"
-    href="mailto:rborowski.gdy@gmail.com"
+    href="mailto:work@rborowski.pl"
     target="_blank"
     />
     <v-list-item
