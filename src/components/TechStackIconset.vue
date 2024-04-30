@@ -1,10 +1,20 @@
 <template>
-  <Icon
-    v-for="(icon, index) in iconList" :key="index"
-    :icon="'logos:' + icon"
-    :height="size"
-    class="mr-2 my-1 svg-shadow"
-  />
+  <v-tooltip
+  v-for="(icon, index) in iconList" :key="index"
+  location="bottom"
+  :text="icon.name"
+  theme="light"
+  open-on-click
+  >
+    <template v-slot:activator="{ props }">
+      <Icon 
+      v-bind="props"
+      :icon="'logos:' + icon.slug"
+      :height="size"
+      class="mr-2 my-1 svg-shadow"
+      />
+    </template>
+  </v-tooltip>
 </template>
 
 <script setup>

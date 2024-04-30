@@ -24,42 +24,12 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";
+import { useAppStore } from "@app/store/app";
 
+const appStore = useAppStore()
 const display = useDisplay()
 
-const iconLists = ref({
-  languages: [
-    "javascript",
-    "python",
-    "php",
-  ],
-  frontend: [
-    "vue",
-    "vuetifyjs",
-    "sass",
-    "bulma",
-    "bootstrap",
-    "tailwindcss-icon",
-  ],
-  backend: [
-    "nodejs-icon",
-    "wordpress-icon",
-    "mongodb-icon",
-    "firebase",
-    "mysql-icon",
-
-  ],
-  tools: [
-    "visual-studio-code",
-    "pycharm",
-    "terminal",
-    "yarn",
-    "git-icon",
-    "github-icon",
-    "vitejs",
-    "docker-icon",
-  ],
-})
+const iconLists = appStore.aboutMeIconset
 
 const iconSize = computed(() => {
   if (display.sm.value || display.md.value) return 32
