@@ -11,6 +11,7 @@
       <v-icon icon="mdi:mdi-open-in-new" end />
     </v-btn>
     <v-btn
+      v-if="project.repository"
       :href="project.repository"
       target="_blank"
       variant="text"

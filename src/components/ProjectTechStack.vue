@@ -1,6 +1,6 @@
 <template>
   <div class="d-block">
-    <div class="mt-1 d-flex justify-center flex-wrap">
+    <div class="mt-1 mr-n2 d-flex justify-center flex-wrap">
       <TechStackIconset :icon-list="iconList" :size="iconSize" />
     </div>
   </div>

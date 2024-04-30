@@ -20,6 +20,20 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       photo: "chordly1.png",
     },
     {
+      id: "qwerty2",
+      name: "Lasernik.pl",
+      url: "https://lasernik.pl/",
+      description:
+        "This is alive e-commerce website created for Polish engraver's shop.",
+      stack: [
+        { slug: "wordpress-icon", name: "Wordpress" },
+        { slug: "php", name: "PHP"},
+        { slug: "html-5", name: "HTML 5" },
+        { slug: "css-3", name: "CSS 3" },
+      ],
+      photo: "lasernik1.png",
+    },
+    {
       id: "qwerty3",
       name: "Noteballs",
       url: "https://my-noteballs.netlify.app/",
