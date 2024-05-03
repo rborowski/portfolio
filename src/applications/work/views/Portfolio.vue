@@ -18,7 +18,7 @@
       </div>
       <!-- 1 row per project, each row switch columns -->
       <v-row
-        v-for="(project, index) in portfoiloStore.projects"
+        v-for="(project, index) in projectsCurrentList"
         :key="project.id"
         class="d-flex justify-md-space-between mb-10"
       >
@@ -35,16 +35,16 @@
           /> 
         </v-col>
       </v-row>
-    </div>
-    <div class="d-flex align-center w-100 mt-5 mx-6 mx-md-16" v-if="maxProjectsCount && portfoiloStore.projects.length > 4">
-      <v-btn
-      @click="$router.push('/portfolio')"
-      variant="outlined"
-      class="text-background text-subtitle-2 px-3 px-sm-4 font-weight-medium"
-      >
-        Show more projects
-        <v-icon icon="mdi:mdi-arrow-right" end/>
-      </v-btn>
+      <div class="d-flex justify-center w-100 mt-5" v-if="maxProjectsCount && portfoiloStore.projects.length >= maxProjectsCount">
+        <v-btn
+        @click="$router.push('/portfolio')"
+        class="text-background text-subtitle-1 text-sm-h6 px-3 px-sm-4 font-weight-medium"
+        size="large"
+        >
+          Show more projects
+          <v-icon icon="mdi:mdi-arrow-right" end/>
+        </v-btn>
+      </div>
     </div>
   </v-lazy>
   </v-container>
@@ -52,8 +52,17 @@
 
 <script setup>
 import { usePortfolioStore } from "@app/store/portfolio";
+import { computed } from "vue";
 
 const portfoiloStore = usePortfolioStore()
+
+const projectsCurrentList = computed(() => {
+  if (props.maxProjectsCount) {
+    return portfoiloStore.projects.slice(0, props.maxProjectsCount)
+  } else {
+    return portfoiloStore.projects
+  }
+})
 
 const props = defineProps({
     maxProjectsCount: {

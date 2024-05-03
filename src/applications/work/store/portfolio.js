@@ -49,6 +49,38 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "noteballs1.png",
     },
+    {
+      id: "qwerty4",
+      name: "Noteballs",
+      url: "https://my-noteballs.netlify.app/",
+      repository: "https://github.com/rborowski/noteballs",
+      description:
+        "This is a simple todos app. Users can create accounts and store their important notes here.",
+      stack: [
+        { slug: "javascript", name: "JavaScript" },
+        { slug: "vue", name: "Vue 3" },
+        { slug: "bulma", name: "Bulma" },
+        { slug: "firebase", name: "Google Firebase" },
+        { slug: "nodejs-icon", name: "NodeJS" },
+      ],
+      photo: "noteballs1.png",
+    },
+    {
+      id: "qwerty5",
+      name: "Noteballs",
+      url: "https://my-noteballs.netlify.app/",
+      repository: "https://github.com/rborowski/noteballs",
+      description:
+        "This is a simple todos app. Users can create accounts and store their important notes here.",
+      stack: [
+        { slug: "javascript", name: "JavaScript" },
+        { slug: "vue", name: "Vue 3" },
+        { slug: "bulma", name: "Bulma" },
+        { slug: "firebase", name: "Google Firebase" },
+        { slug: "nodejs-icon", name: "NodeJS" },
+      ],
+      photo: "noteballs1.png",
+    },
   ]);
 
   return {
