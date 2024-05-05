@@ -1,6 +1,6 @@
 <template>
   <v-container
-  class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
+  class="mt-16 mt-md-n16 px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
   style="position:relative"
   >
   <v-lazy
@@ -18,7 +18,7 @@
       </div>
       <!-- 1 row per project, each row switch columns -->
       <v-row
-        v-for="(project, index) in projectsCurrentList"
+        v-for="(project, index) in visibleProjects"
         :key="project.id"
         class="d-flex justify-md-space-between mb-10"
       >
@@ -35,18 +35,14 @@
           /> 
         </v-col>
       </v-row>
-      <div
-        class="d-flex justify-center w-100 mt-5"
-        v-if="portfoiloStore.projects.length >= maxProjectsCount"
-      >
-        <v-btn
-        @click="$router.push('/portfolio')"
-        class="text-background text-subtitle-1 text-sm-h6 px-3 px-sm-4 font-weight-medium"
-        size="large"
+      <div class="d-flex justify-center w-100 mt-5">
+        <v-pagination
+          rounded="pill"
+          :total-visible="7"
+          v-model="page"
+          :length="Math.ceil(portfoiloStore.projects.length/perPage)"
         >
-          Show more projects
-          <v-icon icon="mdi:mdi-arrow-right" end/>
-        </v-btn>
+        </v-pagination>
       </div>
     </div>
   </v-lazy>
@@ -55,24 +51,18 @@
 
 <script setup>
 import { usePortfolioStore } from "@app/store/portfolio";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const portfoiloStore = usePortfolioStore()
 
-const projectsCurrentList = computed(() => {
-  if (props.maxProjectsCount > 0) {
-    return portfoiloStore.projects.slice(0, props.maxProjectsCount)
-  } else {
-    return portfoiloStore.projects
-  }
+const page = ref(1)
+
+const perPage = ref(4)
+
+const visibleProjects = computed(() => {
+  return portfoiloStore.projects.slice((page.value - 1) * perPage.value, page.value * perPage.value)
 })
 
-const props = defineProps({
-    maxProjectsCount: {
-      type: Number,
-      default: 0 // if maxProjectsCount <= 0 then throw all projects. 
-    }
-  })
 </script>
 
 <style scoped lang="sass">

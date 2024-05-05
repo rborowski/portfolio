@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import Portfolio from "@app/views/Portfolio";
+import Portfolio from "@app/views/portfolio/Portfolio";
 </script>
