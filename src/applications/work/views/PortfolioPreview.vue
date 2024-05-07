@@ -16,25 +16,13 @@
           Each project is a unique piece of code 🍰
         </h1>
       </div>
-      <!-- 1 row per project, each row switch columns -->
-      <v-row
+      <Project
         v-for="(project, index) in projectsCurrentList"
         :key="project.id"
-        class="d-flex justify-md-space-between mb-10"
+        :project="project"
+        :index="index"
       >
-        <v-col cols="12" md="6" class="description-max-w px-8 d-flex flex-column justify-space-between">
-          <ProjectDescription :project="project"/>
-          <ProjectActions :project="project"/>
-        </v-col>
-        <v-col cols="12" md="6" class="px-0 px-md-8 " :class="{'order-md-first': index % 2 === 0}">
-          <v-card
-            :image="'/images/portfolio/' + project.photo"
-            class="mx-auto w-100"
-            :height="250"
-            cover
-          /> 
-        </v-col>
-      </v-row>
+      </Project>
       <div
         class="d-flex justify-center w-100 mt-5"
         v-if="portfoiloStore.projects.length >= maxProjectsCount"
@@ -74,8 +62,3 @@ const props = defineProps({
     }
   })
 </script>
-
-<style scoped lang="sass">
-.description-max-w
-  max-width: 650px
-</style>
