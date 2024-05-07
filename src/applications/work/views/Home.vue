@@ -4,7 +4,7 @@
   >
       <div v-if="display.mdAndUp.value" />
       <div class="w-100">
-        <div class="d-flex justify-space-between gr-5 gc-sm-5 gc-lg-10 flex-wrap">
+        <div class="d-flex justify-space-between gr-5 gc-sm-5 flex-wrap flex-md-nowrap">
           <HomeSocial class="pl-3 pl-md-0" />
           <HomeAvatar class="order-md-last" />
           <div v-if="!display.mdAndUp.value" class="pr-15" />
