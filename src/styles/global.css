@@ -1,7 +1,7 @@
 /* Define View container dimensions */
 .container-min-h {
   height: max-content;
-  min-height: 100svh;
+  min-height: calc(100svh - 64px);
   max-height: none;
   overflow: hidden;
 }

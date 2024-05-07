@@ -1,7 +1,7 @@
 <template>
   <DefaultBar />
   <DefaultDrawer/>
-    <DefaultView class="mt-n16"/>
+    <DefaultView />
     <!-- <DefaultFooter/> -->
 </template>
 

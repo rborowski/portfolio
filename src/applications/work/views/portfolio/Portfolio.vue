@@ -1,13 +1,9 @@
 <template>
   <v-container
-  class="mt-16 mt-md-n16 px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
+  class="px-0 px-md-5 d-flex justify-space-between flex-column container-max-w container-min-h"
   style="position:relative"
   >
-  <v-lazy
-    :options="{'threshold':0.5}"
-    transition="fade-transition"
-  >
-    <div class="mx-md-10">
+    <div>
       <div class="px-5">
         <header class="section-header">
           Portfolio
@@ -23,17 +19,16 @@
         :index="index"
       >
       </Project>
-      <div class="d-flex justify-center w-100 mt-5">
-        <v-pagination
-          rounded="pill"
-          :total-visible="7"
-          v-model="page"
-          :length="Math.ceil(portfoiloStore.projects.length/perPage)"
-        >
-        </v-pagination>
-      </div>
     </div>
-  </v-lazy>
+    <div class="d-flex justify-center w-100 my-5">
+      <v-pagination
+        rounded="pill"
+        :total-visible="7"
+        v-model="page"
+        :length="Math.ceil(portfoiloStore.projects.length/perPage)"
+      >
+      </v-pagination>
+    </div>
   </v-container>
 </template>
 
