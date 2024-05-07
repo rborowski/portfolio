@@ -1,6 +1,6 @@
 <template>
   <v-container
-  class="px-0 px-md-5 mb-10 d-flex justify-space-around flex-column container-max-w container-min-h"
+  class="px-0 px-md-5 pt-4 pt-md-16 mb-10 d-flex justify-space-around flex-column container-max-w container-min-h"
   style="position:relative"
   >
   <v-lazy

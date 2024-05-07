@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="px-5 d-flex justify-space-around flex-column container-max-w container-min-h"
+    class="px-5 pt-4 pt-md-16 d-flex justify-space-around flex-column container-max-w container-min-h"
   >
     <v-lazy
       :options="{'threshold':0.5}"
