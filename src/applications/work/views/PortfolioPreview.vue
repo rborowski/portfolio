@@ -1,6 +1,6 @@
 <template>
   <v-container
-  class="px-0 px-md-5 d-flex justify-space-around flex-column container-max-w container-min-h mb-10"
+  class="px-0 px-md-5 mb-10 d-flex justify-space-around flex-column container-max-w container-min-h"
   style="position:relative"
   >
   <v-lazy
@@ -17,15 +17,15 @@
         </h1>
       </div>
       <Project
-        v-for="(project, index) in projectsCurrentList"
-        :key="project.id"
+        v-for="(project, index) in exposedProjects"
+        :key="index"
         :project="project"
         :index="index"
       >
       </Project>
       <div
         class="d-flex justify-center w-100 mt-5"
-        v-if="portfoiloStore.projects.length >= maxProjectsCount"
+        v-if="portfoiloStore.projects.length > exposedProjects.length"
       >
         <v-btn
         @click="$router.push('/portfolio')"
@@ -47,18 +47,10 @@ import { computed } from "vue";
 
 const portfoiloStore = usePortfolioStore()
 
-const projectsCurrentList = computed(() => {
-  if (props.maxProjectsCount > 0) {
-    return portfoiloStore.projects.slice(0, props.maxProjectsCount)
-  } else {
-    return portfoiloStore.projects
-  }
+const exposedProjects = computed(() => {
+  return portfoiloStore.projects
+    .filter((project) => project.onMain)
+    .sort((a, b) => a.onMain - b.onMain)
 })
 
-const props = defineProps({
-    maxProjectsCount: {
-      type: Number,
-      default: 0 // if maxProjectsCount <= 0 then throw all projects. 
-    }
-  })
 </script>

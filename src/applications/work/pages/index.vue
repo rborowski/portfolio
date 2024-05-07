@@ -9,7 +9,6 @@
   />
   <Portfolio
     v-intersect="appStore.intersectionHandler"
-    :max-projects-count="4"
     id="portfolio"
   />
   <Contact

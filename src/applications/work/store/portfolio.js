@@ -18,6 +18,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "css-3", name: "CSS 3" },
       ],
       photo: "chordly1.png",
+      onMain: 1,
     },
     {
       id: "qwerty2",
@@ -32,10 +33,11 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "css-3", name: "CSS 3" },
       ],
       photo: "lasernik1.png",
+      onMain: 2,
     },
     {
       id: "qwerty3",
-      name: "Noteballs",
+      name: "Noteballs3",
       url: "https://my-noteballs.netlify.app/",
       repository: "https://github.com/rborowski/noteballs",
       description:
@@ -48,10 +50,11 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "nodejs-icon", name: "NodeJS" },
       ],
       photo: "noteballs1.png",
+      onMain: 4,
     },
     {
       id: "qwerty4",
-      name: "Noteballs",
+      name: "Noteballs4",
       url: "https://my-noteballs.netlify.app/",
       repository: "https://github.com/rborowski/noteballs",
       description:
@@ -64,6 +67,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "nodejs-icon", name: "NodeJS" },
       ],
       photo: "noteballs1.png",
+      onMain: 3,
     },
     {
       id: "qwerty5",
@@ -80,6 +84,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "nodejs-icon", name: "NodeJS" },
       ],
       photo: "noteballs1.png",
+      onMain: false,
     },
   ]);
 
