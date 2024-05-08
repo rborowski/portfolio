@@ -19,7 +19,8 @@
         rounded="pill"
         :total-visible="7"
         v-model="page"
-        :length="Math.ceil(portfoiloStore.projects.length/perPage)"
+        :length="paginationLength"
+        @update:model-value="setQueryPage(page)"
       >
       </v-pagination>
     </div>
@@ -29,18 +30,37 @@
 <script setup>
 import { usePortfolioStore } from "@app/store/portfolio";
 import { useAppStore } from "@app/store/app";
-import { computed, ref, onBeforeMount } from "vue";
+import { computed, ref, onBeforeMount, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const portfoiloStore = usePortfolioStore()
 const appStore = useAppStore()
+const route = useRoute()
+const router = useRouter()
 
 const page = ref(1)
 
 const perPage = ref(4)
 
+const paginationLength = computed(() => Math.ceil(portfoiloStore.projects.length/perPage.value))
+
 const visibleProjects = computed(() => {
   return portfoiloStore.projects.slice((page.value - 1) * perPage.value, page.value * perPage.value)
 })
 
+function setQueryPage(page){
+  router.push({ path: 'portfolio', query: { page }})
+}
+
 onBeforeMount(() => appStore.currentView = "")
+
+onMounted(() =>{
+  console.log(route.query.page)
+  if (route.query.page >= 1 && route.query.page <= paginationLength.value) {
+    return page.value = parseInt(route.query.page)
+  } else if (!route.query.page){
+    return
+  }
+  return setQueryPage(1)
+})
 </script>
