@@ -4,21 +4,15 @@
   style="position:relative"
   >
     <div>
-      <div class="px-5">
-        <header class="section-header">
-          Portfolio
-        </header>
-        <h1 class="text-h6 text-sm-h5 mb-sm-10 mb-6 ">
-          Each project is a unique piece of code 🍰
-        </h1>
+      <div class="w-100 d-flex">
+        <PortfolioCard class="mb-10 mb-sm-16 mt-3 mx-n3 mx-md-5"/>
       </div>
       <Project
         v-for="(project, index) in visibleProjects"
         :key="project.id"
         :project="project"
         :index="index"
-      >
-      </Project>
+      />
     </div>
     <div class="d-flex justify-center w-100 my-5">
       <v-pagination
