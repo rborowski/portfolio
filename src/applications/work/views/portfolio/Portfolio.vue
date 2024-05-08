@@ -34,9 +34,11 @@
 
 <script setup>
 import { usePortfolioStore } from "@app/store/portfolio";
-import { computed, ref } from "vue";
+import { useAppStore } from "@app/store/app";
+import { computed, ref, onBeforeMount } from "vue";
 
 const portfoiloStore = usePortfolioStore()
+const appStore = useAppStore()
 
 const page = ref(1)
 
@@ -46,4 +48,5 @@ const visibleProjects = computed(() => {
   return portfoiloStore.projects.slice((page.value - 1) * perPage.value, page.value * perPage.value)
 })
 
+onBeforeMount(() => appStore.currentView = "")
 </script>
