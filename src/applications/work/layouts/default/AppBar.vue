@@ -17,12 +17,17 @@
           <v-btn
             variant="text"
             :active="false"
-            v-for="navItem in appStore.navItems"
-            :key="navItem.id"
-            :class="{'text-primary' : navItem === appStore.currentView}"
-            :to="{ path: '/', hash: `#${navItem}` }"
+            v-for="(navItem, index) in appStore.navItems"
+            :key="index"
+            :class="{'text-primary' : navItem.slug === appStore.currentView}"
+            :to="{ path: navItem.page, hash: navItem.hash }"
           >
-             {{ getPropperNavName(navItem) }}
+            {{ navItem.title }}
+              <AppBarSubmenu
+                v-if="navItem.submenu && navItem.submenu.length != 0"
+                :submenu="navItem.submenu"
+              >
+              </AppBarSubmenu>
           </v-btn>
         </template>  
         <v-btn variant="text" icon="mdi: mdi-theme-light-dark" @click="appStore.toggleTheme"></v-btn>
@@ -35,13 +40,11 @@
 <script setup>
 import { useAppStore } from "@app/store/app";
 import { useDisplay } from "vuetify";
+import AppBarSubmenu from './AppBarSubmenu.vue'
 
 const display = useDisplay()
 const appStore = useAppStore()
 
-function getPropperNavName(navName) {
-  return (navName.charAt(0).toUpperCase() + navName.slice(1)).replace("-", " ")
-}
 </script>
 <style scoped lang="sass">
 .max-w

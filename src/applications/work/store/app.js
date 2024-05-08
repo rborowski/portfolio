@@ -12,7 +12,45 @@ export const useAppStore = defineStore("app", () => {
 
   //Views and navigation
   const drawer = ref(false);
-  const navItems = ref(["home", "about-me", "portfolio", "contact"]);
+
+  const navItems = ref([
+    {
+      title: "Home",
+      slug: "home",
+      page: "/",
+      hash: "",
+      submenu: [],
+    },
+    {
+      title: "About me",
+      slug: "about-me",
+      page: "/",
+      hash: "#about-me",
+      submenu: [],
+    },
+    {
+      title: "Portfolio",
+      slug: "portfolio",
+      page: "/",
+      hash: "#portfolio",
+      submenu: [
+        {
+          title: "All projects",
+          slug: "all-projects",
+          page: "/portfolio",
+          hash: "",
+        },
+      ],
+    },
+    {
+      title: "Contact",
+      slug: "contact",
+      page: "/",
+      hash: "#contact",
+      submenu: [],
+    },
+  ]);
+
   const currentView = ref("");
 
   function toggleTheme() {

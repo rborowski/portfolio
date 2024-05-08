@@ -25,3 +25,7 @@ a {
   text-decoration: none;
   color: rgb(var(--v-theme-on-surface));
 }
+
+a.text-on-surface {
+  color: rgb(var(--v-theme-on-surface)) !important;
+}
