@@ -49,13 +49,12 @@ const visibleProjects = computed(() => {
 })
 
 function setQueryPage(page){
-  router.push({ path: 'portfolio', query: { page }})
+  router.replace({ path: 'portfolio', query: {...route.query, page }})
 }
 
 onBeforeMount(() => appStore.currentView = "")
 
 onMounted(() =>{
-  console.log(route.query.page)
   if (route.query.page >= 1 && route.query.page <= paginationLength.value) {
     return page.value = parseInt(route.query.page)
   } else if (!route.query.page){
