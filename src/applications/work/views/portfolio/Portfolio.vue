@@ -52,7 +52,7 @@ function setQueryPage(page){
   router.replace({ path: 'portfolio', query: {...route.query, page }})
 }
 
-onBeforeMount(() => appStore.currentView = "")
+onBeforeMount(() => appStore.currentView = "all-projects")
 
 onMounted(() =>{
   if (route.query.page >= 1 && route.query.page <= paginationLength.value) {

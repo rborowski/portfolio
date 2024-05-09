@@ -66,13 +66,9 @@ export const useAppStore = defineStore("app", () => {
     },
   });
 
-  const intersecting = ref(false);
-
   function onIntersect(isIntersecting, entries, observer) {
-    const intersecting_element = ref(entries[0]);
-    intersecting.value = intersecting_element.value.intersectionRatio >= 0.5;
-    if (intersecting.value) {
-      let id = intersecting_element.value.target.id;
+    if (entries[0].intersectionRatio >= 0.5) {
+      let id = entries[0].target.id;
       currentView.value = id;
       // location.hash = id
     }
