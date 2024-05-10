@@ -5,7 +5,9 @@
     "dev": "vite --config vite.config.work.mjs",
     "build": "vite build --config vite.config.work.mjs",
     "preview": "vite preview --config vite.config.work.mjs",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "host": "vite --config vite.config.work.mjs --host"
+
   },
   "dependencies": {
     "@mdi/font": "7.4.47",

@@ -1,6 +1,5 @@
 <template>
   <Portfolio
-    v-intersect="appStore.intersectionHandler"
     id="all-projects"
   />
 </template>

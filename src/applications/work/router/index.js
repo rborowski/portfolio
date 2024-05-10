@@ -12,6 +12,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   extendRoutes: (routes) => setupLayouts(routes),
   scrollBehavior(to, from, savedPosition) {
+    if (to.params.noScroll) return
+
     const scrollSettings = { 
       behavior: 'smooth',
       block: "start", 

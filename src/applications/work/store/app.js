@@ -59,20 +59,6 @@ export const useAppStore = defineStore("app", () => {
       : "dark";
   }
 
-  const intersectionHandler = ref({
-    handler: onIntersect,
-    options: {
-      threshold: [0, 0.5, 1.0],
-    },
-  });
-
-  function onIntersect(isIntersecting, entries, observer) {
-    if (entries[0].intersectionRatio >= 0.5) {
-      let id = entries[0].target.id;
-      currentView.value = id;
-      // location.hash = id
-    }
-  }
 
   const aboutMeIconset = ref({
     languages: [
@@ -120,7 +106,6 @@ export const useAppStore = defineStore("app", () => {
   ]);
 
   return {
-    intersectionHandler,
     appName,
     drawer,
     navItems,
