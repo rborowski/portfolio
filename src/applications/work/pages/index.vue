@@ -22,13 +22,6 @@ const { currentView } = storeToRefs(appStore)
 const router = useRouter();
 
 const refs = ref([])
-const observers = ref([]);
-const resizeObserver = ref(null)
-
-const threshold = ref(null)
-const exceedingThreshold = 0.5
-
-let handleResize;
 
 function setItemRef(el) {
   if (el && !refs.value.includes(el)) {
@@ -36,22 +29,59 @@ function setItemRef(el) {
   }
 }
 
+const observers = ref([]);
+const resizeObserver = ref(null)
+
+const exceedingThreshold = 0.5
+const nonExceedingThreshold = 0.6
+
+const handleResize = debounce(() => {
+  console.log("handle resize")
+  updateObserversThreshold(refs.value, nonExceedingThreshold, exceedingThreshold);
+}, 500);
+
+
 function intersectionHandler(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      if (
-        (entry.rootBounds.height < entry.boundingClientRect.height
-        ) ||
-        (entry.rootBounds.height >= entry.boundingClientRect.height
-          && entry.intersectionRatio >= 0.5
-        )
-      ) {
-        const id = entry.target.id;
-        appStore.currentView = id;
-      }
+      const id = entry.target.id;
+      appStore.currentView = id;
     }
   });
 }
+
+function updateObserversThreshold(targets, nonExceedingThreshold, exceedingThreshold) {
+
+  const threshold = ref(null)
+  const viewportHeight = window.innerHeight
+
+  observers.value.forEach((observer) => {
+    observer.disconnect(); // Disconnect previous observer
+  });
+
+  observers.value = []; // Reset observers array
+
+  targets.forEach((ref, index) => {
+    const el = ref.$el;
+    const sectionHeight = el.offsetHeight;
+
+    if (sectionHeight > (viewportHeight)) {
+      threshold.value = ((viewportHeight) / sectionHeight) * exceedingThreshold
+    } else {
+      threshold.value = nonExceedingThreshold
+    }
+    const observer = new IntersectionObserver(
+      intersectionHandler,
+      { threshold: threshold.value }
+    );
+
+    observer.observe(el);
+    observers.value.push(observer);
+
+  });
+}
+
+
 
 watch(currentView, (newView) => {
   const hash = appStore.navItems.find((item) => item.slug === newView).hash
@@ -59,40 +89,6 @@ watch(currentView, (newView) => {
 })
 
 onMounted(() => {
-  const viewportHeight = ref(window.innerHeight)
-
-  function updateObserversThreshold() {
-
-    observers.value.forEach((observer) => {
-      observer.disconnect(); // Disconnect previous observer
-    });
-
-    observers.value = []; // Reset observers array
-
-    refs.value.forEach((ref, index) => {
-      const el = ref.$el;
-      const sectionHeight = el.offsetHeight;
-
-      if (sectionHeight > (viewportHeight.value)) {
-        threshold.value = ((viewportHeight.value) / sectionHeight) * exceedingThreshold
-      } else {
-        threshold.value = 0.6
-      }
-      const observer = new IntersectionObserver(
-        intersectionHandler,
-        { threshold: threshold.value }
-      );
-
-      observer.observe(el);
-      observers.value.push(observer);
-
-    });
-  }
-
-  handleResize = debounce(() => {
-    viewportHeight.value = window.innerHeight;
-    updateObserversThreshold();
-  }, 500);
 
   window.addEventListener("resize", handleResize);
 
@@ -102,7 +98,7 @@ onMounted(() => {
     resizeObserver.value.observe(ref.$el);
   });
 
-  updateObserversThreshold();
+  updateObserversThreshold(refs.value, nonExceedingThreshold, exceedingThreshold);
 })
 
 onBeforeUnmount(() => {
