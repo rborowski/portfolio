@@ -1,23 +1,19 @@
 // useResizeObserver.js
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 export function useResizeObserver(targets, handler) {
-    const resizeObserver = ref(null);
-    
-    console.log("I'm in composable useResizeObserver yay")
+  const resizeObserver = ref(null);
 
-    onMounted(() => {
-      resizeObserver.value = new ResizeObserver(handler);
-      console.log(targets)
-      targets.value.forEach((target) => {
-        resizeObserver.value.observe(target);
-      });
+  onMounted(() => {
+    resizeObserver.value = new ResizeObserver(handler);
+    targets.forEach((target) => {
+      resizeObserver.value.observe(target);
     });
+  });
 
-    onBeforeUnmount(() => {
-      if (resizeObserver.value) {
-        resizeObserver.value.disconnect();
-      }
-    });
-
+  onBeforeUnmount(() => {
+    if (resizeObserver.value) {
+      resizeObserver.value.disconnect();
+    }
+  });
 }

@@ -15,6 +15,8 @@ import { useAppStore } from "@app/store/app";
 import { useRouter } from "vue-router";
 import { watch, ref, onMounted, onBeforeUnmount } from "vue";
 import { storeToRefs } from "pinia";
+import { useResizeObserver } from "@/composables/useResizeObserver";
+import { useEventListener } from "@/composables/useEvent";
 
 const { debounce } = useDebounce();
 const appStore = useAppStore()
@@ -23,14 +25,13 @@ const router = useRouter();
 
 const refs = ref([])
 
-function setItemRef(el) {
-  if (el && !refs.value.includes(el)) {
-    refs.value.push(el)
+function setItemRef(ref) {
+  if (ref && !refs.value.includes(ref.$el)) {
+    refs.value.push(ref.$el)
   }
 }
 
 const observers = ref([]);
-const resizeObserver = ref(null)
 
 const exceedingThreshold = 0.5
 const nonExceedingThreshold = 0.6
@@ -61,8 +62,7 @@ function updateObserversThreshold(targets, nonExceedingThreshold, exceedingThres
 
   observers.value = []; // Reset observers array
 
-  targets.forEach((ref, index) => {
-    const el = ref.$el;
+  targets.forEach((el, index) => {
     const sectionHeight = el.offsetHeight;
 
     if (sectionHeight > (viewportHeight)) {
@@ -81,6 +81,9 @@ function updateObserversThreshold(targets, nonExceedingThreshold, exceedingThres
   });
 }
 
+useResizeObserver(refs.value, handleResize)
+
+useEventListener(window, "resize", handleResize)
 
 
 watch(currentView, (newView) => {
@@ -90,14 +93,6 @@ watch(currentView, (newView) => {
 
 onMounted(() => {
 
-  window.addEventListener("resize", handleResize);
-
-  // ResizeObserver is for lazy loading - initial height is lower
-  resizeObserver.value = new ResizeObserver(handleResize);
-  refs.value.forEach((ref) => {
-    resizeObserver.value.observe(ref.$el);
-  });
-
   updateObserversThreshold(refs.value, nonExceedingThreshold, exceedingThreshold);
 })
 
@@ -106,9 +101,6 @@ onBeforeUnmount(() => {
     observer.disconnect();
   });
 
-  resizeObserver.value.disconnect();
-
-  window.removeEventListener("resize", handleResize);
 });
 
 </script>
