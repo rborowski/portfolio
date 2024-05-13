@@ -15,12 +15,33 @@
       cols="12"
       md="6"
     >
-      <v-card
-        :image="'/images/portfolio/' + project.photo"
-        class="mx-auto w-100"
-        :height="display.sm.value ? '450' : '250'"
-        cover
-      /> 
+      <v-hover v-slot="{ isHovering, props }">
+        <v-card
+          v-bind="props"
+          :image="'/images/portfolio/' + project.photo"
+          class="mx-auto w-100"
+          :height="display.sm.value ? '450' : '250'"
+          cover
+        >
+          <v-overlay
+              :model-value="isHovering || project.inProgress"
+              class="align-center justify-center"
+              scrim="background"
+              opacity="0.7"
+              contained
+              persistent
+              no-click-animation
+            >
+              <div
+                v-if="project.inProgress"
+                class="text-h5 text-center"
+              >
+                In progress
+              </div> 
+              <ProjectActions v-else :project="project"/>
+          </v-overlay>
+      </v-card>
+    </v-hover>
     </v-col>
   </v-row>
 </template>

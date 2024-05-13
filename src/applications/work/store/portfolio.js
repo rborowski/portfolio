@@ -1,7 +1,7 @@
 // portfolio projects store
 
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 export const usePortfolioStore = defineStore("portfolio", () => {
   const projects = ref([
@@ -19,6 +19,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "chordly1.png",
       onMain: 1,
+      inProgress: false,
     },
     {
       id: "qwerty2",
@@ -34,6 +35,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "lasernik1.png",
       onMain: 2,
+      inProgress: false,
     },
     {
       id: "qwerty3",
@@ -51,12 +53,13 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "noteballs1.png",
       onMain: 4,
+      inProgress: true,
     },
     {
       id: "qwerty4",
       name: "Noteballs4",
-      url: "https://my-noteballs.netlify.app/",
-      repository: "https://github.com/rborowski/noteballs",
+      url: "",
+      repository: "",
       description:
         "This is a simple todos app. Users can create accounts and store their important notes here.",
       stack: [
@@ -68,6 +71,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "noteballs1.png",
       onMain: 3,
+      inProgress: true,
     },
     {
       id: "qwerty5",
@@ -85,6 +89,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       ],
       photo: "noteballs1.png",
       onMain: false,
+      inProgress: true,
     },
   ]);
 

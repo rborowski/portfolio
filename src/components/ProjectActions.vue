@@ -3,6 +3,7 @@
     <v-btn
       color="primary"
       variant="outlined"
+      v-if="project.url"
       :href="project.url"
       target="_blank"
       class="text-background text-subtitle-2 px-3 px-sm-4 font-weight-medium"
