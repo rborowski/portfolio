@@ -1,7 +1,8 @@
 <template>
-  <v-row class="d-flex justify-md-space-between mb-10" >
+  <v-row class="d-flex justify-md-space-between mt-2 mb-10" >
     <v-col
-      class="description-max-w px-8 d-flex flex-column justify-space-between"
+      class="px-8 d-flex flex-column justify-space-between"
+      :class="{'description-max-w' : display.mdAndUp.value}"
       cols="12"
       md="6"
     >
@@ -17,7 +18,7 @@
       <v-card
         :image="'/images/portfolio/' + project.photo"
         class="mx-auto w-100"
-        :height="250"
+        :height="display.sm.value ? '450' : '250'"
         cover
       /> 
     </v-col>
@@ -25,6 +26,10 @@
 </template>
 
 <script setup>
+import { useDisplay } from "vuetify";
+
+const display = useDisplay()
+
 defineProps({
   project: {
     type: Object,
