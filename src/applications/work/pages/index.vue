@@ -12,11 +12,12 @@ import Portfolio from "@app/views/PortfolioPreview";
 import Contact from "@app/views/Contact";
 import { useDebounce } from '@/composables/useDebounce';
 import { useAppStore } from "@app/store/app";
-import { useRouter } from "vue-router";
-import { watch, ref, onMounted, onBeforeUnmount } from "vue";
-import { storeToRefs } from "pinia";
 import { useResizeObserver } from "@/composables/useResizeObserver";
 import { useEventListener } from "@/composables/useEvent";
+import { useIntersectionObserver } from "@/composables/useIntersectionObserver";
+import { useRouter } from "vue-router";
+import { watch, ref } from "vue";
+import { storeToRefs } from "pinia";
 
 const { debounce } = useDebounce();
 const appStore = useAppStore()
@@ -31,18 +32,7 @@ function setItemRef(ref) {
   }
 }
 
-const observers = ref([]);
-
-const exceedingThreshold = 0.5
-const nonExceedingThreshold = 0.6
-
-const handleResize = debounce(() => {
-  console.log("handle resize")
-  updateObserversThreshold(refs.value, nonExceedingThreshold, exceedingThreshold);
-}, 500);
-
-
-function intersectionHandler(entries) {
+function onIntersect(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const id = entry.target.id;
@@ -51,56 +41,17 @@ function intersectionHandler(entries) {
   });
 }
 
-function updateObserversThreshold(targets, nonExceedingThreshold, exceedingThreshold) {
-
-  const threshold = ref(null)
-  const viewportHeight = window.innerHeight
-
-  observers.value.forEach((observer) => {
-    observer.disconnect(); // Disconnect previous observer
-  });
-
-  observers.value = []; // Reset observers array
-
-  targets.forEach((el, index) => {
-    const sectionHeight = el.offsetHeight;
-
-    if (sectionHeight > (viewportHeight)) {
-      threshold.value = ((viewportHeight) / sectionHeight) * exceedingThreshold
-    } else {
-      threshold.value = nonExceedingThreshold
-    }
-    const observer = new IntersectionObserver(
-      intersectionHandler,
-      { threshold: threshold.value }
-    );
-
-    observer.observe(el);
-    observers.value.push(observer);
-
-  });
-}
-
-useResizeObserver(refs.value, handleResize)
-
-useEventListener(window, "resize", handleResize)
-
-
 watch(currentView, (newView) => {
   const hash = appStore.navItems.find((item) => item.slug === newView).hash
   router.replace({ hash, params: { noScroll: true } })
 })
 
-onMounted(() => {
+const { updateObservers } = useIntersectionObserver(refs.value, onIntersect)
 
-  updateObserversThreshold(refs.value, nonExceedingThreshold, exceedingThreshold);
-})
+const handleResize = debounce(updateObservers, 500);
 
-onBeforeUnmount(() => {
-  observers.value.forEach((observer) => {
-    observer.disconnect();
-  });
+useResizeObserver(refs.value, handleResize)
 
-});
+useEventListener(window, "resize", handleResize)
 
 </script>
