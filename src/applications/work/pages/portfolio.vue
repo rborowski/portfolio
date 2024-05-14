@@ -6,7 +6,10 @@
 
 <script setup>
 import Portfolio from "@app/views/portfolio/Portfolio";
-import { useAppStore } from "@app/store/app";
 
-const appStore = useAppStore()
+import { useHeadSafe } from '@unhead/vue'
+
+useHeadSafe({
+  title: 'Portfolio - Rafał Borowski - personal site',
+})
 </script>

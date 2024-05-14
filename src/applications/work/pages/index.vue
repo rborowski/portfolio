@@ -16,8 +16,13 @@ import { useResizeObserver } from "@/composables/useResizeObserver";
 import { useEventListener } from "@/composables/useEvent";
 import { useIntersectionObserver } from "@/composables/useIntersectionObserver";
 import { useRouter } from "vue-router";
+import { useHeadSafe } from '@unhead/vue'
 import { watch, ref } from "vue";
 import { storeToRefs } from "pinia";
+
+useHeadSafe({
+  title: 'Rafał Borowski - personal site',
+})
 
 const { debounce } = useDebounce();
 const appStore = useAppStore()

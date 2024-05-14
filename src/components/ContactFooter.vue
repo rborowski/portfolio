@@ -5,7 +5,7 @@
     <v-list-item class="px-0">
       <template #prepend>
         <v-avatar class="elevation-4 bg-gradient px-0" size="x-large" >
-          <v-img src="@/assets/img/selfie.png" position="60%"/>
+          <v-img src="@/assets/img/selfie.png" position="0 20%" alt="avatar"/>
         </v-avatar>
       </template>
       <v-list-item-title class="font-weight-black text-uppercase"> 

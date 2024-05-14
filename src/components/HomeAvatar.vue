@@ -1,6 +1,6 @@
 <template>
   <v-avatar :size="getSize" class="bg-gradient align-self-center elevation-4" >
-    <v-img src="@/assets/img/selfie.png" position="0 20%"/>
+    <v-img src="@/assets/img/selfie.png" position="0 20%" alt="avatar"/>
   </v-avatar>
 </template>
 

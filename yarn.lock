@@ -557,6 +557,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@unhead/dom@npm:1.9.10":
+  version: 1.9.10
+  resolution: "@unhead/dom@npm:1.9.10"
+  dependencies:
+    "@unhead/schema": "npm:1.9.10"
+    "@unhead/shared": "npm:1.9.10"
+  checksum: 10c0/3888fed84998dd20ad3c646cabef5c050b24b72386b34ad4fcd740e3d522d81dff8920dbce943f548017eaa1b4b00ad5bee7e0804b1c9b582386fd8fb5cadd7b
+  languageName: node
+  linkType: hard
+
+"@unhead/schema@npm:1.9.10":
+  version: 1.9.10
+  resolution: "@unhead/schema@npm:1.9.10"
+  dependencies:
+    hookable: "npm:^5.5.3"
+    zhead: "npm:^2.2.4"
+  checksum: 10c0/892a8c25d2bc9c90dc4c5e1f2ba3e56dc946006a12e628ebc30941398f046dcd49881de4872ea327bbbdd4c95e3b3c6eed735e6d475f9f8df195b1607225b8c6
+  languageName: node
+  linkType: hard
+
+"@unhead/shared@npm:1.9.10":
+  version: 1.9.10
+  resolution: "@unhead/shared@npm:1.9.10"
+  dependencies:
+    "@unhead/schema": "npm:1.9.10"
+  checksum: 10c0/b1e61f26e317ffabc7716571f1f85d38945ed0aa68cc088d1975b09a1e81093562351a073924a54cbe0b4cce51589ca6787daed3f6f7c70720d6ff4b6382769e
+  languageName: node
+  linkType: hard
+
+"@unhead/vue@npm:^1.9.10":
+  version: 1.9.10
+  resolution: "@unhead/vue@npm:1.9.10"
+  dependencies:
+    "@unhead/schema": "npm:1.9.10"
+    "@unhead/shared": "npm:1.9.10"
+    hookable: "npm:^5.5.3"
+    unhead: "npm:1.9.10"
+  peerDependencies:
+    vue: ">=2.7 || >=3"
+  checksum: 10c0/41ff4319f39c5f04c922bdfd9ed9734679604b04c5b0ca406e4af6e18cfd40131fa37d0fb730469f492832ffd3fb30ac4b0bcb1bcc04e7e1ef5ea05edd85fde8
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-vue@npm:^4.6.2":
   version: 4.6.2
   resolution: "@vitejs/plugin-vue@npm:4.6.2"
@@ -2078,6 +2121,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hookable@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "hookable@npm:5.5.3"
+  checksum: 10c0/275f4cc84d27f8d48c5a5cd5685b6c0fea9291be9deea5bff0cfa72856ed566abde1dcd8cb1da0f9a70b4da3d7ec0d60dc3554c4edbba647058cc38816eced3d
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
@@ -3057,6 +3107,7 @@ __metadata:
   dependencies:
     "@iconify/vue": "npm:^4.1.2"
     "@mdi/font": "npm:7.4.47"
+    "@unhead/vue": "npm:^1.9.10"
     "@vitejs/plugin-vue": "npm:^4.6.2"
     core-js: "npm:^3.37.0"
     eslint: "npm:^8.56.0"
@@ -3730,6 +3781,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unhead@npm:1.9.10":
+  version: 1.9.10
+  resolution: "unhead@npm:1.9.10"
+  dependencies:
+    "@unhead/dom": "npm:1.9.10"
+    "@unhead/schema": "npm:1.9.10"
+    "@unhead/shared": "npm:1.9.10"
+    hookable: "npm:^5.5.3"
+  checksum: 10c0/70793344b854763f0f152976c566a8bbc0de73deb0fd69d2c8a55619a26412f5fb5956654f0ebceed2ed1249f51d498d2ee462ceb6fc9be17c27032b8cde3aab
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -4135,5 +4198,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zhead@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "zhead@npm:2.2.4"
+  checksum: 10c0/3d166fb661f1b7fdf8a0ef2222d9e574ab241e72141f2f1fda62a9250ca73aabf2eaf0d66046a3984cd24d1dd9bac231338c6271684d6b8caa6b66af7c45f275
   languageName: node
   linkType: hard
