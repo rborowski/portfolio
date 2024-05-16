@@ -67,15 +67,17 @@ export const useAppStore = defineStore("app", () => {
       { slug: "php", name: "PHP" },
     ],
     frontend: [
-      { slug: "vue", name: "Vue 3" },
-      { slug: "vuetifyjs", name: "Vuetify 3" },
+      { slug: "vue", name: "Vue.js 3" },
+      { slug: "vuetifyjs", name: "Vuetify.js 3" },
+      { slug: "nuxt-icon", name: "Nuxt.js 3" },
       { slug: "sass", name: "Sass" },
       { slug: "bulma", name: "Bulma" },
       { slug: "bootstrap", name: "Bootstrap" },
       { slug: "tailwindcss-icon", name: "Tailwind CSS" },
     ],
     backend: [
-      { slug: "nodejs-icon", name: "NodeJS" },
+      { slug: "nodejs-icon", name: "Node.js" },
+      { slug: "express", name: "Express.js" },
       { slug: "wordpress-icon", name: "Wordpress" },
       { slug: "mongodb-icon", name: "MongoDB" },
       { slug: "firebase", name: "Google Firebase" },
@@ -88,20 +90,23 @@ export const useAppStore = defineStore("app", () => {
       { slug: "yarn", name: "Yarn" },
       { slug: "git-icon", name: "Git" },
       { slug: "github-icon", name: "Github" },
+      { slug: "github-actions", name: "Github Actions" },
       { slug: "vitejs", name: "ViteJS" },
       { slug: "docker-icon", name: "Docker" },
+      { slug: "postman-icon", name: "Postman"},
+
     ],
   });
 
   const homeIconset = ref([
     { slug: "javascript", name: "JavaScript" },
-    { slug: "python", name: "Python" },
-    { slug: "php", name: "PHP" },
-    { slug: "vue", name: "Vue 3" },
-    { slug: "vuetifyjs", name: "Vuetify 3" },
-    { slug: "nodejs-icon", name: "NodeJS" },
+    { slug: "vue", name: "Vue.js 3" },
+    { slug: "vuetifyjs", name: "Vuetify.js 3" },
+    { slug: "nodejs-icon", name: "Node.js" },
     { slug: "mongodb-icon", name: "MongoDB" },
     { slug: "firebase", name: "Google Firebase" },
+    { slug: "python", name: "Python" },
+    { slug: "php", name: "PHP" },
     { slug: "mysql-icon", name: "MySQL" },
   ]);
 

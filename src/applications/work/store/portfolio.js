@@ -64,6 +64,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         "Example vehicle-rental website - users can choose from different types of trams and request rental for a certain amount of time",
       stack: [
         { slug: "javascript", name: "JavaScript" },
+        { slug: "nuxt-icon", name: "Nuxt.js" },
         { slug: "vue", name: "Vue 3" },
         { slug: "mongodb-icon", name: "MongoDB" },
         { slug: "nodejs-icon", name: "NodeJS" },
