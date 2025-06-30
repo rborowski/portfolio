@@ -55,24 +55,24 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       onMain: 3,
       inProgress: false,
     },
-    {
-      id: "qwerty4",
-      name: "TramRental",
-      url: "",
-      repository: "",
-      description:
-        "Example vehicle-rental website - users can choose from different types of trams and request rental for a certain amount of time",
-      stack: [
-        { slug: "javascript", name: "JavaScript" },
-        { slug: "nuxt-icon", name: "Nuxt.js" },
-        { slug: "vue", name: "Vue 3" },
-        { slug: "mongodb-icon", name: "MongoDB" },
-        { slug: "nodejs-icon", name: "NodeJS" },
-      ],
-      photo: "portfolio1.jpg",
-      onMain: false,
-      inProgress: true,
-    },
+    // {
+    //   id: "qwerty4",
+    //   name: "TramRental",
+    //   url: "",
+    //   repository: "",
+    //   description:
+    //     "Example vehicle-rental website - users can choose from different types of trams and request rental for a certain amount of time",
+    //   stack: [
+    //     { slug: "javascript", name: "JavaScript" },
+    //     { slug: "nuxt-icon", name: "Nuxt.js" },
+    //     { slug: "vue", name: "Vue 3" },
+    //     { slug: "mongodb-icon", name: "MongoDB" },
+    //     { slug: "nodejs-icon", name: "NodeJS" },
+    //   ],
+    //   photo: "portfolio1.jpg",
+    //   onMain: false,
+    //   inProgress: true,
+    // },
     {
       id: "qwerty5",
       name: "OC Planner",

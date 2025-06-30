@@ -9,7 +9,7 @@
     <template v-slot:activator="{ props }">
       <Icon 
       v-bind="props"
-      :icon="'logos:' + icon.slug"
+      :icon="icon.slug"
       :height="size"
       class="mr-2 my-1 svg-shadow"
       />
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { Icon } from '@iconify/vue';
+import { Icon } from '@iconify/vue'; 
 
 const props = defineProps({
   size: {

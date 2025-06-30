@@ -59,55 +59,84 @@ export const useAppStore = defineStore("app", () => {
       : "dark";
   }
 
-
+  
   const aboutMeIconset = ref({
-    languages: [
-      { slug: "javascript", name: "JavaScript" },
-      { slug: "python", name: "Python" },
-      { slug: "php", name: "PHP" },
+    topTechnology: [
+      { slug: "logos:dotnet", name: ".NET" },
+      { slug: "logos:c-sharp", name: "C#" },
+      { slug: "logos:php", name: "PHP" },
+      { slug: "logos:symfony", name: "Symfony" },
+      { slug: "logos:docker-icon", name: "Docker" },
+      { slug: "logos:linux-tux", name: "Linux" },
+      { slug: "logos:bash-icon", name: "BASH" },
     ],
-    frontend: [
-      { slug: "vue", name: "Vue.js 3" },
-      { slug: "vuetifyjs", name: "Vuetify.js 3" },
-      { slug: "nuxt-icon", name: "Nuxt.js 3" },
-      { slug: "sass", name: "Sass" },
-      { slug: "bulma", name: "Bulma" },
-      { slug: "bootstrap", name: "Bootstrap" },
-      { slug: "tailwindcss-icon", name: "Tailwind CSS" },
+    wellKnown: [
+      { slug: "logos:javascript", name: "JavaScript" },
+      { slug: "logos:typescript-icon", name: "TypeScript" },
+      { slug: "logos:vue", name: "Vue.js" },
+      { slug: "logos:nuxt-icon", name: "Nuxt.js" },
+      { slug: "logos:react", name: "React.js" },
+      { slug: "logos:html-5", name: "HTML5" },
+      { slug: "logos:css-3", name: "CSS3" },
+      { slug: "logos:nodejs-icon", name: "Node.js" },
+      { slug: "simple-icons:express", name: "Express.js" },
+      { slug: "logos:python", name: "Python" },
+      
     ],
-    backend: [
-      { slug: "nodejs-icon", name: "Node.js" },
-      { slug: "express", name: "Express.js" },
-      { slug: "wordpress-icon", name: "Wordpress" },
-      { slug: "mongodb-icon", name: "MongoDB" },
-      { slug: "firebase", name: "Google Firebase" },
-      { slug: "mysql-icon", name: "MySQL" },
+    databases: [
+      { slug: "logos:postgresql", name: "PostgreSQL" },
+      { slug: "logos:mongodb-icon", name: "MongoDB" },
+      { slug: "logos:firebase", name: "Google Firebase" },
+      { slug: "logos:mysql-icon", name: "MySQL" },
+      { slug: "logos:redis", name: "Redis" },
+      { slug: "cib:oracle", name: "Oracle DB" },
+    ],
+    uiUx: [
+      { slug: "logos:vuetifyjs", name: "Vuetify.js" },
+      { slug: "logos:material-ui", name: "Material UI" },
+      { slug: "logos:sass", name: "Sass" },
+      { slug: "logos:bulma", name: "Bulma" },
+      { slug: "logos:bootstrap", name: "Bootstrap" },
+      { slug: "logos:tailwindcss-icon", name: "Tailwind CSS" },
+      { slug: "logos:figma", name: "Figma" },
+
+    ],
+    other: [
+      { slug: "logos:github-actions", name: "Github Actions" },
+      { slug: "simple-icons:podman", name: "Podman" },
+      { slug: "logos:vault-icon", name: "Hashicorp Vault" },
+      { slug: "logos:terraform-icon", name: "Terraform" },
+      { slug: "logos:wordpress-icon", name: "Wordpress" },
+
     ],
     tools: [
-      { slug: "visual-studio-code", name: "Visual Studio Code" },
-      { slug: "pycharm", name: "PyCharm" },
-      { slug: "terminal", name: "Terminal" },
-      { slug: "yarn", name: "Yarn" },
-      { slug: "git-icon", name: "Git" },
-      { slug: "github-icon", name: "Github" },
-      { slug: "github-actions", name: "Github Actions" },
-      { slug: "vitejs", name: "ViteJS" },
-      { slug: "docker-icon", name: "Docker" },
-      { slug: "postman-icon", name: "Postman"},
-
+      { slug: "logos:visual-studio", name: "Visual Studio" },
+      { slug: "logos:visual-studio-code", name: "Visual Studio Code" },
+      { slug: "logos:phpstorm", name: "PhpStorm" },
+      { slug: "logos:terminal", name: "Terminal" },
+      { slug: "logos:git-icon", name: "Git" },
+      { slug: "logos:github-icon", name: "Github" },
+      { slug: "logos:gitlab", name: "GitLab" },
+      { slug: "logos:bitbucket", name: "Bitbucket" },
+      { slug: "logos:yarn", name: "Yarn" },
+      { slug: "logos:postman-icon", name: "Postman"},
+      
     ],
   });
 
   const homeIconset = ref([
-    { slug: "javascript", name: "JavaScript" },
-    { slug: "vue", name: "Vue.js 3" },
-    { slug: "vuetifyjs", name: "Vuetify.js 3" },
-    { slug: "nodejs-icon", name: "Node.js" },
-    { slug: "mongodb-icon", name: "MongoDB" },
-    { slug: "firebase", name: "Google Firebase" },
-    { slug: "python", name: "Python" },
-    { slug: "php", name: "PHP" },
-    { slug: "mysql-icon", name: "MySQL" },
+    { slug: "logos:dotnet", name: ".NET" },
+    { slug: "logos:c-sharp", name: "C#" },
+    { slug: "logos:php", name: "PHP" },
+    { slug: "logos:symfony", name: "Symfony" },
+    { slug: "logos:docker-icon", name: "Docker" },
+
+    
+    { slug: "logos:typescript-icon", name: "TypeScript" },
+    { slug: "logos:vue", name: "Vue.js 3" },
+    { slug: "logos:nodejs-icon", name: "Node.js" },
+
+    { slug: "logos:python", name: "Python" },
   ]);
 
   return {
