@@ -86,7 +86,7 @@ export const useAppStore = defineStore("app", () => {
     databases: [
       { slug: "logos:postgresql", name: "PostgreSQL" },
       { slug: "logos:mongodb-icon", name: "MongoDB" },
-      { slug: "logos:firebase", name: "Google Firebase" },
+      { slug: "logos:firebase-icon", name: "Google Firebase" },
       { slug: "logos:mysql-icon", name: "MySQL" },
       { slug: "logos:redis", name: "Redis" },
       { slug: "cib:oracle", name: "Oracle DB" },
@@ -116,7 +116,7 @@ export const useAppStore = defineStore("app", () => {
       { slug: "logos:terminal", name: "Terminal" },
       { slug: "logos:git-icon", name: "Git" },
       { slug: "logos:github-icon", name: "Github" },
-      { slug: "logos:gitlab", name: "GitLab" },
+      { slug: "logos:gitlab-icon", name: "GitLab" },
       { slug: "logos:bitbucket", name: "Bitbucket" },
       { slug: "logos:yarn", name: "Yarn" },
       { slug: "logos:postman-icon", name: "Postman"},

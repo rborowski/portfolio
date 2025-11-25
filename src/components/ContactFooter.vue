@@ -46,6 +46,6 @@
 
   </v-list>
   <h1 class="font-weight-bold text-subtitle-1 mb-5 mt-15">
-    © 2024 Rafał Borowski — rborowski.pl
+    © 2025 Rafał Borowski — rborowski.pl
   </h1>
 </template>
