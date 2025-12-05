@@ -66,6 +66,7 @@ export const useAppStore = defineStore("app", () => {
       { slug: "logos:c-sharp", name: "C#" },
       { slug: "logos:php", name: "PHP" },
       { slug: "logos:symfony", name: "Symfony" },
+      { slug: "logos:laravel", name: "Laravel" },
       { slug: "logos:docker-icon", name: "Docker" },
       { slug: "logos:linux-tux", name: "Linux" },
       { slug: "logos:bash-icon", name: "BASH" },
@@ -129,12 +130,12 @@ export const useAppStore = defineStore("app", () => {
     { slug: "logos:c-sharp", name: "C#" },
     { slug: "logos:php", name: "PHP" },
     { slug: "logos:symfony", name: "Symfony" },
+    { slug: "logos:laravel", name: "Laravel" },
     { slug: "logos:docker-icon", name: "Docker" },
 
     
     { slug: "logos:typescript-icon", name: "TypeScript" },
     { slug: "logos:vue", name: "Vue.js 3" },
-    { slug: "logos:nodejs-icon", name: "Node.js" },
 
     { slug: "logos:python", name: "Python" },
   ]);
