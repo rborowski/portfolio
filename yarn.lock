@@ -3448,7 +3448,7 @@ __metadata:
     unplugin-fonts: "npm:^1.1.1"
     unplugin-vue-components: "npm:^0.27.0"
     unplugin-vue-router: "npm:^0.8.6"
-    vite: "npm:^5.2.11"
+    vite: "npm:^5.4.11"
     vite-plugin-vue-layouts: "npm:^0.11.0"
     vite-plugin-vuetify: "npm:^2.0.3"
     vue: "npm:^3.4.27"
@@ -4380,7 +4380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.11":
+"vite@npm:^5.4.11":
   version: 5.4.21
   resolution: "vite@npm:5.4.21"
   dependencies:

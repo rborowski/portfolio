@@ -76,6 +76,13 @@ export default defineConfig({
       },
     }
   },
+  css: {
+    preprocessorOptions: {
+      sass: {
+        api: 'modern',
+      },
+    },
+  },
   define: { 'process.env': {} },
   resolve: {
     alias: {
