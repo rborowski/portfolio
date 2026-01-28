@@ -62,52 +62,34 @@ export const useAppStore = defineStore("app", () => {
   
   const aboutMeIconset = ref({
     topTechnology: [
-      { slug: "logos:dotnet", name: ".NET" },
-      { slug: "logos:c-sharp", name: "C#" },
       { slug: "logos:php", name: "PHP" },
       { slug: "logos:symfony", name: "Symfony" },
       { slug: "logos:laravel", name: "Laravel" },
+      { slug: "logos:c-sharp", name: "C#" },
       { slug: "logos:docker-icon", name: "Docker" },
       { slug: "logos:linux-tux", name: "Linux" },
-      { slug: "logos:bash-icon", name: "BASH" },
+      { slug: "logos:bash-icon", name: "Bash" },
     ],
     wellKnown: [
-      { slug: "logos:javascript", name: "JavaScript" },
       { slug: "logos:typescript-icon", name: "TypeScript" },
       { slug: "logos:vue", name: "Vue.js" },
-      { slug: "logos:nuxt-icon", name: "Nuxt.js" },
       { slug: "logos:react", name: "React.js" },
-      { slug: "logos:html-5", name: "HTML5" },
-      { slug: "logos:css-3", name: "CSS3" },
       { slug: "logos:nodejs-icon", name: "Node.js" },
-      { slug: "simple-icons:express", name: "Express.js" },
+      { slug: "logos:tailwindcss-icon", name: "Tailwind CSS" },
+      { slug: "logos:vuetifyjs", name: "Vuetify.js" },
       { slug: "logos:python", name: "Python" },
-      
     ],
     databases: [
       { slug: "logos:postgresql", name: "PostgreSQL" },
-      { slug: "logos:mongodb-icon", name: "MongoDB" },
-      { slug: "logos:firebase-icon", name: "Google Firebase" },
       { slug: "logos:mysql-icon", name: "MySQL" },
+      { slug: "vscode-icons:file-type-sql", name: "SQL Server" },
       { slug: "logos:redis", name: "Redis" },
-      { slug: "cib:oracle", name: "Oracle DB" },
+      { slug: "logos:mongodb-icon", name: "MongoDB" },
     ],
-    uiUx: [
-      { slug: "logos:vuetifyjs", name: "Vuetify.js" },
-      { slug: "logos:material-ui", name: "Material UI" },
-      { slug: "logos:sass", name: "Sass" },
-      { slug: "logos:bulma", name: "Bulma" },
-      { slug: "logos:bootstrap", name: "Bootstrap" },
-      { slug: "logos:tailwindcss-icon", name: "Tailwind CSS" },
-      { slug: "logos:figma", name: "Figma" },
-
-    ],
-    other: [
-      { slug: "logos:github-actions", name: "Github Actions" },
-      { slug: "simple-icons:podman", name: "Podman" },
-      { slug: "logos:vault-icon", name: "Hashicorp Vault" },
-      { slug: "logos:terraform-icon", name: "Terraform" },
-      { slug: "logos:wordpress-icon", name: "Wordpress" },
+    toolsQuality: [
+      { slug: "material-icon-theme:phpunit", name: "PHPUnit" },
+      { slug: "fluent-emoji-flat:house", name: "Rector PHP" },
+      { slug: "vscode-icons:file-type-phpstan", name: "PHPStan" },
 
     ],
     tools: [
@@ -119,25 +101,20 @@ export const useAppStore = defineStore("app", () => {
       { slug: "logos:github-icon", name: "Github" },
       { slug: "logos:gitlab-icon", name: "GitLab" },
       { slug: "logos:bitbucket", name: "Bitbucket" },
-      { slug: "logos:yarn", name: "Yarn" },
       { slug: "logos:postman-icon", name: "Postman"},
+      { slug: "logos:github-actions", name: "Github Actions" },
+
       
     ],
   });
 
   const homeIconset = ref([
-    { slug: "logos:dotnet", name: ".NET" },
-    { slug: "logos:c-sharp", name: "C#" },
     { slug: "logos:php", name: "PHP" },
     { slug: "logos:symfony", name: "Symfony" },
     { slug: "logos:laravel", name: "Laravel" },
+    { slug: "logos:c-sharp", name: "C#" },
     { slug: "logos:docker-icon", name: "Docker" },
-
-    
-    { slug: "logos:typescript-icon", name: "TypeScript" },
     { slug: "logos:vue", name: "Vue.js 3" },
-
-    { slug: "logos:python", name: "Python" },
   ]);
 
   return {

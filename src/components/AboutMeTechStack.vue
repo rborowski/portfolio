@@ -3,27 +3,23 @@
     My Tech Stack
   </div>
   <div class="text-subtitle-1 mb-1">
-    Top technology I use
+    Primary technologies
   </div>
   <TechStackIconset :icon-list="iconLists.topTechnology" :size="iconSize" />
   <div class="text-subtitle-1 mb-1">
-    Technology I also know well
+    Supporting technologies
   </div>
   <TechStackIconset :icon-list="iconLists.wellKnown" :size="iconSize" />
   <div class="text-subtitle-1 mb-1">
-    Database and storage technology I know
+    Database technology
   </div>
   <TechStackIconset :icon-list="iconLists.databases" :size="iconSize" />
   <div class="text-subtitle-1 mb-1">
-    Ui/Ux/Design technology and tools I use
+   Testing and code quality tools
   </div>
-  <TechStackIconset :icon-list="iconLists.uiUx" :size="iconSize" />
+  <TechStackIconset :icon-list="iconLists.toolsQuality" :size="iconSize" />
   <div class="text-subtitle-1 mb-1">
-    Other technology I touched
-  </div>
-  <TechStackIconset :icon-list="iconLists.other" :size="iconSize" />
-  <div class="text-subtitle-1 mb-1">
-    Tools I use
+    Development Tools
   </div>
   <TechStackIconset :icon-list="iconLists.tools" :size="iconSize" />
   <div class="mb-15"></div>
