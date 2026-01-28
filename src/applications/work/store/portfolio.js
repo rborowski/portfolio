@@ -11,7 +11,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
 
       repository: "https://github.com/rborowski/transaction-import-system",
       description:
-        "A full-stack web application written in Laravel for importing and processing bank transactions from CSV, JSON, and XML files. The system validates transaction data, stores successful records, logs errors, and provides a user-friendly interface for managing imports.",
+        "A full stack web application written in Laravel for importing and processing bank transactions from CSV, JSON, and XML files. The system validates transaction data, stores successful records, logs errors, and provides a user-friendly interface for managing imports.",
       stack: [
         { slug: "logos:php", name: "PHP"},
         { slug: "logos:laravel", name: "Laravel" },

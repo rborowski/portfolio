@@ -12,7 +12,7 @@
         Rafał Borowski
       </v-list-item-title>
       <v-list-item-subtitle>
-        Fullstack web developer
+        Full Stack Software Developer
       </v-list-item-subtitle>
     </v-list-item>
   </v-list>
@@ -46,6 +46,6 @@
 
   </v-list>
   <h1 class="font-weight-bold text-subtitle-1 mb-5 mt-15">
-    © 2025 Rafał Borowski — rborowski.pl
+    © 2026 Rafał Borowski — rborowski.pl
   </h1>
 </template>

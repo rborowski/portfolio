@@ -4,7 +4,7 @@
       Hi, I'm Rafał
     </div>
     <h1 class="text-h5 text-sm-h3 text-md-h2 font-weight-bold text-background">
-      I create websites <br/> your users will love 
+      I create software <br/> your users will love 
     </h1>
     <div :class="display.mdAndUp.value ? 'mt-10' : 'mt-4'">
       <v-btn
