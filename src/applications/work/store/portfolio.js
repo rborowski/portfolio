@@ -8,7 +8,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
     {
       id: "qwerty1",
       name: "Bank Transaction Import System",
-      url: "https://web24.rborowski.pl/",
+
       repository: "https://github.com/rborowski/transaction-import-system",
       description:
         "A full-stack web application written in Laravel for importing and processing bank transactions from CSV, JSON, and XML files. The system validates transaction data, stores successful records, logs errors, and provides a user-friendly interface for managing imports.",
@@ -26,6 +26,23 @@ export const usePortfolioStore = defineStore("portfolio", () => {
     },
     {
       id: "qwerty2",
+      name: "Pixel Positions",
+      url: "https://pixel-positions.rborowski.pl/",
+      repository: "https://github.com/rborowski/pixel-positions",
+      description:
+        "Simple Laravel job board. Browse and filter offers by tags, salary range, and employer — or post your own. Built following SOLID principles and Laravel best practices.",
+      stack: [
+        { slug: "logos:php", name: "PHP" },
+        { slug: "logos:laravel", name: "Laravel" },
+        { slug: "logos:mysql-icon", name: "MySQL" },
+        { slug: "logos:tailwindcss-icon", name: "Tailwind CSS" },
+      ],
+      photo: "pixel-positions1.png",
+      onMain: 2,
+      inProgress: false,
+    },
+    {
+      id: "qwerty3",
       name: "Promotions Engine",
       repository: "https://github.com/rborowski/promotions-engine",
       description:
@@ -37,11 +54,11 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "logos:docker-icon", name: "Docker" },
       ],
       photo: "portfolio2.jpg",
-      onMain: 2,
+      onMain: 3,
       inProgress: false,
     },
     {
-      id: "qwerty3",
+      id: "qwerty4",
       name: "Opencaching.pl",
       url: "https://opencaching.pl/",
       repository: "https://github.com/opencaching/opencaching-pl",
@@ -55,11 +72,11 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "logos:css-3", name: "CSS 3" },
       ],
       photo: "opencaching1.png",
-      onMain: 3,
+      onMain: 4,
       inProgress: false,
     },
     {
-      id: "qwerty4",
+      id: "qwerty5",
       name: "Chordly",
       url: "https://chordly.netlify.app/",
       repository: "https://github.com/rborowski/chordly",
@@ -71,11 +88,11 @@ export const usePortfolioStore = defineStore("portfolio", () => {
         { slug: "logos:css-3", name: "CSS 3" },
       ],
       photo: "chordly1.png",
-      onMain: 4,
+      onMain: false,
       inProgress: false,
     },
     {
-      id: "qwerty5",
+      id: "qwerty6",
       name: "Lasernik.pl",
       url: "https://lasernik.pl/",
       description:
@@ -91,7 +108,7 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       inProgress: false,
     },
     {
-      id: "qwerty6",
+      id: "qwerty7",
       name: "Noteballs",
       url: "https://my-noteballs.netlify.app/",
       repository: "https://github.com/rborowski/noteballs",
@@ -109,8 +126,8 @@ export const usePortfolioStore = defineStore("portfolio", () => {
       inProgress: false,
     },
     {
-      id: "qwerty7",
-      name: "OC Planner",
+      id: "qwerty8",
+      name: "CacheAtlas",
       url: "",
       repository: "",
       description:
